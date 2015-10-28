@@ -1,0 +1,23 @@
+#====================================================================
+# Print Sample Make File
+# Chapter 11
+#
+# Real World Programming for OS/2
+# Copyright (c) 1993 Blain, Delimon, and English
+#====================================================================
+
+#====================================================================
+# Dependencies and Build Items
+#====================================================================
+
+OBJS = prnt.obj prntinfo.obj
+
+all: prnt.exe 
+
+prnt.obj: prnt.c prnt.h dialog.h
+
+prntinfo.obj: prntinfo.c prnt.h dialog.h
+
+prnt.res: prnt.rc prnt.h dialog.h
+
+prnt.exe: $(OBJS) prnt.res prnt.def

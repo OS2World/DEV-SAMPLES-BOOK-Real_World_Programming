@@ -1,0 +1,24 @@
+#====================================================================
+# Phone Dependencies Make File
+# Chapter 14
+#
+# Real World Programming for OS/2
+# Copyright (c) 1993 Blain, Delimon, and English
+#====================================================================
+
+#====================================================================
+# Dependencies and Build Items
+#====================================================================
+
+OBJS = phone.obj led.obj
+LIBS = ..\common\controls 
+
+all: phone.exe phone.res
+
+phone.obj: phone.c phone.h led.h
+
+led.obj: led.c led.h phone.h
+
+phone.res: phone.rc settings.dlg status.dlg buttons.dlg phone.h led.h
+
+phone.exe: $(OBJS) phone.res phone.def

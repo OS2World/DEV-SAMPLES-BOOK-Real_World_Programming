@@ -1,0 +1,22 @@
+#====================================================================
+# Threads Demonstration Dependencies Make File
+# Chapter 12
+#
+# Real World Programming for OS/2
+# Copyright (c) 1993 Blain, Delimon, and English
+#====================================================================
+
+#====================================================================
+# Dependencies and Build Items
+#====================================================================
+           
+OBJS = threads.obj 
+LIBS = ..\common\controls 
+
+all: threads.exe threads.res
+
+threads.obj: threads.c threads.h 
+
+threads.res: threads.rc tid.dlg sort.dlg threads.h 
+
+threads.exe: $(OBJS) threads.res threads.def

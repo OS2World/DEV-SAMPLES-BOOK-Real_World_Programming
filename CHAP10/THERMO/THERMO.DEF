@@ -1,0 +1,10 @@
+NAME          THERMO   WINDOWAPI
+DESCRIPTION   'Thermometer Control Program (c) 1993 Blain, Delimon, & English'
+PROTMODE
+
+HEAPSIZE      4096
+STACKSIZE     16384
+
+EXPORTS       
+         MainDlgProc   @1
+         AboutDlgProc  @2

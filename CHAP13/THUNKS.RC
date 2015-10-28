@@ -1,0 +1,29 @@
+/* --------------------------------------------------------------------
+                         Thunks Resource File
+                              Chapter 13
+
+                    Real World Programming for OS/2
+             Copyright (c) 1993 Blain, Delimon, and English
+-------------------------------------------------------------------- */
+
+#include <os2.h>
+#include "thunks.h"
+
+ICON ID_APPNAME THUNKS.ICO
+
+MENU ID_APPNAME
+{
+    MENUITEM "~BookInfo",     IDM_BOOKINFO
+    MENUITEM "~About...",     IDM_ABOUT
+}
+
+STRINGTABLE LOADONCALL MOVEABLE
+BEGIN
+    ID_APPNAME      "32->16 Thunking Application"
+END
+
+rcinclude bookinfo.dlg
+rcinclude ..\common\about.dlg
+
+                                       
+

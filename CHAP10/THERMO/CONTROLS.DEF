@@ -1,0 +1,13 @@
+LIBRARY        CONTROLS   INITINSTANCE
+DESCRIPTION   'Controls DLL (c) 1993 Blain, Delimon, & English'
+PROTMODE
+
+CODE          MOVEABLE
+DATA          MOVEABLE SINGLE
+
+EXPORTS       
+    CenterWindow         @1
+    BevelWndProc         @2
+    ThermometerWndProc   @3 
+
+     

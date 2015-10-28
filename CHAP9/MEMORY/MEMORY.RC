@@ -1,0 +1,22 @@
+/* --------------------------------------------------------------------
+                        Memory Resource File
+                              Chapter 9
+
+                    Real World Programming for OS/2
+             Copyright (c) 1993 Blain, Delimon, and English
+-------------------------------------------------------------------- */
+
+#include <os2.h>
+#include "memory.h"
+
+ICON ID_APPNAME MEMORY.ICO
+
+STRINGTABLE LOADONCALL MOVEABLE
+BEGIN
+    ID_APPNAME      "Memory Allocation Program"
+END
+
+rcinclude memory.dlg
+rcinclude allocate.dlg
+rcinclude ..\..\common\about.dlg
+

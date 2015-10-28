@@ -1,0 +1,58 @@
+/* --------------------------------------------------------------------
+                            Status Dialog
+                              Chapter 14
+
+                    Real World Programming for OS/2
+             Copyright (c) 1993 Blain, Delimon, and English
+-------------------------------------------------------------------- */
+
+DLGTEMPLATE IDD_STATUS LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "", IDD_STATUS, 41, 184, 373, 43, NOT FS_DLGBORDER | WS_VISIBLE,
+        FCF_NOBYTEALIGN
+    PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+    BEGIN
+        GROUPBOX        "Comm Event", -1,            2, 24, 119, 19
+        CONTROL         "CTS", IDC_COMMEVENT_CTS,    5, 26,  17, 11, LEDCLASS, WS_VISIBLE
+        CONTROL         "DSR", IDC_COMMEVENT_DSR,   24, 26,  17, 11, LEDCLASS, WS_VISIBLE
+        CONTROL         "DCD", IDC_COMMEVENT_DCD,   43, 26,  17, 11, LEDCLASS, WS_VISIBLE
+        CONTROL         "BRK", IDC_COMMEVENT_BRK,   62, 26,  17, 11, LEDCLASS, WS_VISIBLE
+        CONTROL         "ERR", IDC_COMMEVENT_ERR,   81, 26,  17, 11, LEDCLASS, WS_VISIBLE
+        CONTROL         "RI",  IDC_COMMEVENT_RI,   100, 26,  17, 11, LEDCLASS, WS_VISIBLE
+        GROUPBOX        "Comm Status", -1,         127, 24, 156, 19
+        CONTROL         "CTS", IDC_COMMSTATUS_CTS, 130, 26,  17, 11, LEDCLASS, WS_VISIBLE
+        CONTROL         "DSR", IDC_COMMSTATUS_DST, 149, 26,  17, 11, LEDCLASS, WS_VISIBLE
+        CONTROL         "DCD", IDC_COMMSTATUS_DCD, 168, 26,  17, 11, LEDCLASS, WS_VISIBLE
+        CONTROL         "XOF", IDC_COMMSTATUS_XON, 187, 26,  17, 11, LEDCLASS, WS_VISIBLE
+        CONTROL         "XON", IDC_COMMSTATUS_XOF, 206, 26,  17, 11, LEDCLASS, WS_VISIBLE
+        CONTROL         "BRK", IDC_COMMSTATUS_BRK, 225, 26,  17, 11, LEDCLASS, WS_VISIBLE
+        CONTROL         "IMM", IDC_COMMSTATUS_IMM, 244, 26,  17, 11, LEDCLASS, WS_VISIBLE
+        CONTROL         "DSR", IDC_COMMSTATUS_DSR, 263, 26,  17, 11, LEDCLASS, WS_VISIBLE
+        GROUPBOX        "Queue", -1,               292, 24,  80, 19
+        LTEXT           "Rcv",   -1,               295, 27,  15,  8
+        LTEXT           "0000", IDC_QUEUE_IN,      311, 27,  18,  8
+        LTEXT           "Xmt",   -1,               334, 27,  15,  8
+        LTEXT           "0000", IDC_QUEUE_OUT,     350, 27,  18,  8
+        GROUPBOX        "Modem", -1,                 2,  3, 119, 19
+        CONTROL         "CTS", IDC_MODEM_CTS,        5,  5,  17, 11, LEDCLASS, WS_VISIBLE
+        CONTROL         "DSR", IDC_MODEM_DSR,       24,  5,  17, 11, LEDCLASS, WS_VISIBLE
+        CONTROL         "RI",  IDC_MODEM_RI,        43,  5,  17, 11, LEDCLASS, WS_VISIBLE
+        CONTROL         "DCD", IDC_MODEM_DCD,       62,  5,  17, 11, LEDCLASS, WS_VISIBLE
+        CONTROL         "DTR", IDC_MODEM_DTR,       81,  5,  17, 11, LEDCLASS, WS_VISIBLE
+        CONTROL         "RTS", IDC_MODEM_RTS,      100,  5,  17, 11, LEDCLASS, WS_VISIBLE
+        GROUPBOX        "Line Status", -1,         127,  3, 156, 19
+        CONTROL         "WRQ", IDC_LINESTATUS_WRQ, 130,  5,  17, 11, LEDCLASS, WS_VISIBLE
+        CONTROL         "DTQ", IDC_LINESTATUS_DTQ, 149,  5,  17, 11, LEDCLASS, WS_VISIBLE
+        CONTROL         "HTX", IDC_LINESTATUS_HTX, 168,  5,  17, 11, LEDCLASS, WS_VISIBLE
+        CONTROL         "CRS", IDC_LINESTATUS_CRS, 187,  5,  17, 11, LEDCLASS, WS_VISIBLE
+        CONTROL         "XON", IDC_LINESTATUS_XON, 206,  5,  17, 11, LEDCLASS, WS_VISIBLE
+        CONTROL         "XOF", IDC_LINESTATUS_XOF, 225,  5,  17, 11, LEDCLASS, WS_VISIBLE
+        CONTROL         "RED", IDC_LINESTATUS_RED, 244,  5,  17, 11, LEDCLASS, WS_VISIBLE
+        CONTROL         "WRT", IDC_LINESTATUS_WRT, 263,  5,  17, 11, LEDCLASS, WS_VISIBLE
+        GROUPBOX        "Comm Error", -1,          292,  3,  80, 19
+        CONTROL         "QOV", IDC_COMMERROR_QOV,  295,  5,  17, 11, LEDCLASS, WS_VISIBLE
+        CONTROL         "HOV", IDC_COMMERROR_HOV,  314,  5,  17, 11, LEDCLASS, WS_VISIBLE
+        CONTROL         "PAR", IDC_COMMERROR_PAR,  333,  5,  17, 11, LEDCLASS, WS_VISIBLE
+        CONTROL         "FRM", IDC_COMMERROR_FRM,  352,  5,  17, 11, LEDCLASS, WS_VISIBLE
+    END
+END

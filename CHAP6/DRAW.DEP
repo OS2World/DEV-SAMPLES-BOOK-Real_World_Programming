@@ -1,0 +1,23 @@
+#====================================================================
+# Draw Dependencies Make File
+# Chapter 6
+#
+# Real World Programming for OS/2
+# Copyright (c) 1993 Blain, Delimon, and English
+#====================================================================
+
+#====================================================================
+# Dependencies and Build Items
+#====================================================================
+
+OBJS = draw.obj thermo.obj 
+
+all: draw.exe 
+
+draw.obj: draw.c draw.h thermo.h
+
+thermo.obj: thermo.c thermo.h
+
+draw.res: draw.rc draw.h
+
+draw.exe: $(OBJS) draw.res draw.def

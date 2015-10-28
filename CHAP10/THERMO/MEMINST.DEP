@@ -1,0 +1,18 @@
+#====================================================================
+# MemInst (MemDLL) Dependencies Make File 
+# Chapter 10
+#
+# Real World Programming for OS/2
+# Copyright (c) 1993 Blain, Delimon, and English
+#====================================================================
+
+#====================================================================
+# Dependencies and Build Items
+#====================================================================
+
+OBJS          = meminst.obj 
+CL386OPTS     = -ND_INSTANCEDATA
+CL386CCSWITCH = -G3sz
+
+all: meminst.obj
+ 

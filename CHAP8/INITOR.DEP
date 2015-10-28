@@ -1,0 +1,21 @@
+#====================================================================
+# INITOR Dependencies Make File
+# Chapter 8
+#
+# Real World Programming for OS/2
+# Copyright (c) 1993 Blain, Delimon, and English
+#====================================================================
+
+#====================================================================
+# Dependencies and Build Items
+#====================================================================
+
+OBJS = initor.obj
+
+all: initor.exe 
+
+initor.obj: initor.c initor.h
+
+initor.res: initor.rc initor.h initor.dlg
+
+initor.exe: $(OBJS) initor.res initor.def

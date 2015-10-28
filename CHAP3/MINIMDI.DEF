@@ -1,0 +1,15 @@
+NAME          MINIMDI   WINDOWAPI
+DESCRIPTION   'MiniMDI Program (c) Blain, Delimon, & English, 1993'
+PROTMODE
+HEAPSIZE      4096
+STACKSIZE     32768
+EXPORTS       ClientWndProc
+              ChildWndProc
+              ToolBarDlgProc
+              WinInfoDlgProc
+              FrameSubclassProc
+              TitleBarSubclassProc
+              SysMenuSubclassProc
+              MenuSubclassProc
+              ChildSubclassProc
+              AboutDlgProc

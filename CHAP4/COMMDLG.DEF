@@ -1,0 +1,9 @@
+NAME          CONTROL WINDOWAPI
+DESCRIPTION   'OS/2 Common Dialogs Program (c) Blain, Delimon, & English, 1993'
+PROTMODE
+HEAPSIZE      4096
+STACKSIZE     32768
+EXPORTS       ClientWndProc
+              AboutDlgProc
+              FileOpenDlgProc
+              FontDlgProc

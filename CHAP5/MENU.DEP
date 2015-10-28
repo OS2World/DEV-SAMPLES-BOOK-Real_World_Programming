@@ -1,0 +1,21 @@
+#====================================================================
+# Menu Dependencies Make File
+# Chapter 5
+#
+# Real World Programming for OS/2
+# Copyright (c) 1993 Blain, Delimon, and English
+#====================================================================
+
+#====================================================================
+# Dependencies and Build Items
+#====================================================================
+
+OBJS = menu.obj 
+
+all: menu.exe menu.res 
+
+menu.res: menu.rc menu.h 
+
+menu.obj: menu.c menu.h menuxtra.h
+
+menu.exe: $(OBJS) menu.res menu.def

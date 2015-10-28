@@ -1,0 +1,71 @@
+/* --------------------------------------------------------------------
+                       Print Sample Resource File
+                              Chapter 11
+
+                    Real World Programming for OS/2
+             Copyright (c) 1993 Blain, Delimon, and English
+-------------------------------------------------------------------- */
+
+#include <os2.h>
+#include "prnt.h"
+#include "dialog.h"
+
+ICON ID_APPNAME PRNT.ICO
+
+RCINCLUDE PRNT.DLG
+RCINCLUDE ..\common\about.dlg
+
+MENU ID_APPNAME
+BEGIN
+    SUBMENU "~File",                      IDM_FILE
+      BEGIN
+        MENUITEM "Select Printer",        IDM_CHOOSE_PRINTER
+        MENUITEM "Print",                 IDM_PRINT
+        MENUITEM "Print in a Thread",     IDM_PRINT_THREAD
+        MENUITEM SEPARATOR
+        MENUITEM "About...",              IDM_ABOUT
+      END
+    SUBMENU "~Display",                   IDM_DISPLAY
+      BEGIN
+        MENUITEM "Blank page",            IDM_DISP_BLANK, 0, MIA_CHECKED
+        MENUITEM "Box scaled to page",    IDM_DISP_BOX
+        MENUITEM "Ellipse scaled to page",IDM_DISP_ELLIPSE
+        MENUITEM SEPARATOR
+        MENUITEM "Printer Information",   IDM_PRINTER_INFO
+      END
+END
+
+
+STRINGTABLE LOADONCALL MOVEABLE
+BEGIN
+    ID_APPNAME            "Sample Print Program"
+    ID_NOQUEUE_ERROR      "No Printers have been installed."
+    ID_PRIORITY_HIGH      "High"
+    ID_PRIORITY_DEF       "Default"
+    ID_PRIORITY_MIN       "Low"
+    ID_STATUS_HELD        "Held"
+    ID_STATUS_PEND        "Pending Deletion"
+    ID_STATUS_NORM        "Released"
+    ID_CAPS_CURRENT       "Current"
+    ID_CAPS_SELECTABLE    "Selectable"
+    ID_CAPS_NONE          "No Attribute Set"
+    ID_TECH_UNKNOWN       "Unknown"
+    ID_TECH_PLOTTER       "Vector Plotter"
+    ID_TECH_RAST_DISP     "Raster Display" 
+    ID_TECH_RAST_PRT      "Raster Printer"
+    ID_TECH_RAST_CAM      "Raster Camera"
+    ID_TECH_POSTSCRIPT    "PostScript Device"
+    ID_ERR_NODEF_PRINTERS "A printer has not been installed, or all printers have been deleted."
+    ID_ERR_FAIL_DEV_QUERY "A call to SplQueryDevice has failed"
+    IDS_JOB_TITLE         "RWP Sample print program"
+    IDM_CHOOSE_PRINTER    "Change the current printer"
+    IDM_PRINT             "Print to "
+    IDM_PRINT_THREAD      "Print in a separate thread to "
+    IDM_ABOUT             "Product information"
+    IDM_DISP_BLANK        "Display an empty page"
+    IDM_DISP_BOX          "Display a filled rectangle scaled to the page"
+    IDM_DISP_ELLIPSE      "Display a filled ellipse scaled to the page"
+    IDM_DISP_X            "Display the ..."
+    IDM_PRINTER_INFO      "Show information on all printers"
+END
+

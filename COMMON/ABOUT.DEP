@@ -1,0 +1,15 @@
+#====================================================================
+# About Dependencies Make File
+# Common
+#
+# Real World Programming for OS/2
+# Copyright (c) 1993 Blain, Delimon, and English
+#====================================================================
+
+#====================================================================
+# Dependencies and Build Items
+#====================================================================
+
+all: about.obj
+
+about.obj: about.c about.h

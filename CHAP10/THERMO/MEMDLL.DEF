@@ -1,0 +1,21 @@
+LIBRARY        MEMDLL   INITINSTANCE 
+DESCRIPTION   'Memory DLL (c) 1993 Blain, Delimon, & English'
+PROTMODE
+
+CODE          MOVEABLE
+DATA          MOVEABLE SINGLE SHARED
+
+SEGMENTS
+    _INSTANCEDATA         CLASS 'FAR_DATA' NONSHARED PRELOAD
+    _INSTANCEDATA         CLASS 'DATA'     NONSHARED PRELOAD
+    c_common              CLASS 'BSS'      NONSHARED PRELOAD
+
+EXPORTS       
+    PrivateAllocate   @1
+    PrivateFree       @2
+    PrivateQuery      @3
+    SharedAllocate    @4
+    SharedFree        @5
+    SharedQuery       @6
+
+     

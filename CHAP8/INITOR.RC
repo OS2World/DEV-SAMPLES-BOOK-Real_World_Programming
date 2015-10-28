@@ -1,0 +1,67 @@
+/* --------------------------------------------------------------------
+                          Initor Resource File
+                              Chapter 8
+
+                    Real World Programming for OS/2
+             Copyright (c) 1993 Blain, Delimon, and English
+-------------------------------------------------------------------- */
+
+#include <os2.h>
+#include "initor.h"
+
+RCINCLUDE initor.dlg
+RCINCLUDE ..\common\about.dlg
+
+ICON ID_APPNAME INITOR.ICO
+
+MENU ADD_MENU PRELOAD MOVEABLE DISCARDABLE
+BEGIN
+    MENUITEM "Add New Application",   IDM_ADD_APP
+    MENUITEM "Add New Key",           IDM_ADD_KEY
+END
+
+MENU DISPLAY_MENU PRELOAD MOVEABLE DISCARDABLE
+BEGIN
+    MENUITEM "User Profile",          IDM_DISPLAY_USER
+    MENUITEM "System Profile",        IDM_DISPLAY_SYS
+    MENUITEM "User & System Profile", IDM_DISPLAY_USERSYS
+    MENUITEM "Open Private...",       IDM_DISPLAY_PRIVATE
+    MENUITEM "Refresh",               IDM_REFRESH
+    MENUITEM "About Initor",          IDM_ABOUT
+END
+
+MENU DELETE_MENU PRELOAD MOVEABLE DISCARDABLE
+BEGIN
+    MENUITEM "Delete Application Section", IDM_DELETE_APP
+    MENUITEM "Delete Selected Key",        IDM_DELETE_KEY
+END
+
+MENU SAVE_MENU PRELOAD MOVEABLE DISCARDABLE
+BEGIN
+    MENUITEM "Changes",               IDM_SAVE_CHANGES
+    MENUITEM "Screen Location",       IDM_SAVE_LOCATION
+END 
+
+STRINGTABLE LOADONCALL MOVEABLE
+BEGIN
+    ID_ADD           "Add"
+    ID_DISPLAY       "Display"
+    ID_DELETE        "Delete"
+    ID_SAVE          "Save"
+    ID_EXIT          "Exit"
+    ID_APPNAME       "OS/2 INI File Editor"
+    ID_APPLICATION   "Application Name"
+    ID_KEY           "Key Name"
+    ID_DATA          " Offset                    %4X Hex Bytes                %4d ASCII Bytes"  
+    ID_HINIUSER      "Viewing User Profile"
+    ID_HINISYS       "Viewing System Profile"
+    ID_HINIBOTH      "Viewing User And System Profile"
+    ID_HINIPRIVATE   "Viewing %s"
+    ID_INITOR        "INITOR"
+    ID_LOCATION      "SCREEN POS"
+    ID_WRITE_ERROR   "Update to initialization file failed"
+    ID_DELETE_ERROR  "Error deleting initialization file entry"
+    ID_SAVEPOS_ERROR "Unable to save current screen location"
+    ID_QTEXT_ERROR   "Unable to retrieve key data text"
+END
+

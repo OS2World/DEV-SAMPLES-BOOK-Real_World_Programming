@@ -1,0 +1,21 @@
+/* --------------------------------------------------------------------
+                        MemMap Resource File
+                              Chapter 9
+
+                    Real World Programming for OS/2
+             Copyright (c) 1993 Blain, Delimon, and English
+-------------------------------------------------------------------- */
+
+#include <os2.h>
+#include "memmap.h"
+
+ICON ID_APPNAME MEMMAP.ICO
+
+STRINGTABLE LOADONCALL MOVEABLE
+BEGIN
+    ID_APPNAME      "Memory Map Application"
+END
+
+rcinclude memmap.dlg
+rcinclude ..\..\common\about.dlg
+

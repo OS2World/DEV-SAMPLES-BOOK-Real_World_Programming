@@ -1,0 +1,39 @@
+#====================================================================
+# Controls DLL Dependencies Make File
+# Chapter 10
+#
+# Real World Programming for OS/2
+# Copyright (c) 1993 Blain, Delimon, and English
+#====================================================================
+
+#====================================================================
+# Dependencies and Build Items
+#====================================================================
+
+OBJS           = controls.obj
+CL386INITOBJ   = ctlinit.obj
+ZORTECHINITOBJ = ctlinit.obj
+BORLANDINITOBJ = ctlinit.obj
+ZORTECHLINKER  = link386
+IBMCOPTS       = -Ge-
+
+all: controls.lib controls.dll ..\..\common\controls.h ..\..\common\controls.lib
+
+..\..\common\controls.h: controls.h
+    copy controls.h ..\..\common\controls.h
+
+..\..\common\controls.lib: controls.lib
+    copy controls.lib ..\..\common\controls.lib
+
+controls.lib: controls.def
+    implib $*.lib $*.def
+
+controls.obj: controls.c controls.h 
+
+ctlinit.obj: ctlinit.asm
+
+controls.res: controls.rc
+
+controls.dll: $(OBJS) ctlinit.obj controls.def controls.res 
+
+

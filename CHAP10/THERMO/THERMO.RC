@@ -1,0 +1,22 @@
+/* --------------------------------------------------------------------
+                         Thermo Resource File
+                              Chapter 10
+
+                    Real World Programming for OS/2
+             Copyright (c) 1993 Blain, Delimon, and English
+-------------------------------------------------------------------- */
+
+#include <os2.h>
+#include "thermo.h"
+#include "controls.h"
+
+ICON ID_APPNAME THERMO.ICO
+
+STRINGTABLE LOADONCALL MOVEABLE
+BEGIN
+    ID_APPNAME       "Thermometer / Memory DLL Application"
+END
+
+rcinclude thermo.dlg
+rcinclude ..\..\common\about.dlg
+

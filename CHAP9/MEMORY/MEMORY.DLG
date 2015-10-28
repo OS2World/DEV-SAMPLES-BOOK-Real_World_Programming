@@ -1,0 +1,60 @@
+/* --------------------------------------------------------------------
+                            Memory Dialog
+                              Chapter 9
+
+                    Real World Programming for OS/2
+             Copyright (c) 1993 Blain, Delimon, and English
+-------------------------------------------------------------------- */
+
+MENU FREE_MENU PRELOAD
+BEGIN
+    MENUITEM "Free Selected Item", IDM_FREE_SELECTED
+    MENUITEM "Free All Items",     IDM_FREE_ALL
+END
+
+MENU SELECT_MENU PRELOAD
+BEGIN
+    MENUITEM "Select All",   IDM_SELECT_ALL
+    MENUITEM "Select None",  IDM_SELECT_NONE
+END
+
+MENU STATE_MENU PRELOAD
+BEGIN
+    MENUITEM "Commit Selected Pages",   IDM_COMMIT_SELECTED
+    MENUITEM "Decommit Selected Pages", IDM_DECOMMIT_SELECTED
+END
+
+MENU RIGHTS_MENU PRELOAD
+BEGIN
+    MENUITEM "Read",               IDM_READ
+    MENUITEM "Write",              IDM_WRITE
+    MENUITEM "Execute",            IDM_EXECUTE
+    MENUITEM "Read/Write",         IDM_READWRITE
+    MENUITEM "Read/Execute",       IDM_READEXECUTE
+    MENUITEM "Write/Execute",      IDM_WRITEEXECUTE
+    MENUITEM "Read/Write/Execute", IDM_READWRITEEXECUTE
+END
+
+DLGTEMPLATE ID_APPNAME LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Memory Allocation", ID_APPNAME, 5, 11, 330, 153, 
+            WS_VISIBLE | FS_DLGBORDER, 
+            FCF_SYSMENU | FCF_TITLEBAR | FCF_DLGBORDER |
+            FCF_TASKLIST | FCF_ICON;
+    BEGIN
+        LTEXT           "Address",    -1,   9, 137, 37, 8
+        LTEXT           "Requested",  -1,  55, 137, 49, 8 
+        LTEXT           "Allocated",  -1, 109, 137, 41, 8
+        LTEXT           "Committed",  -1, 156, 137, 48, 8
+        LTEXT           "Address",    -1, 223, 137, 37, 8
+        LTEXT           "Flags",      -1, 283, 137, 26, 8
+        LISTBOX         IDL_MEMLIST,    5, 22, 208, 114, WS_GROUP | WS_TABSTOP
+        DEFPUSHBUTTON   "Allocate", IDB_ALLOCATE,   4, 4, 50, 14, WS_GROUP | WS_TABSTOP
+        PUSHBUTTON      "Free",     IDB_FREE,      57, 4, 50, 14, WS_TABSTOP
+        LISTBOX         IDL_PAGELIST, 222, 22, 102, 114, WS_GROUP | WS_TABSTOP | LS_MULTIPLESEL | LS_EXTENDEDSEL
+        PUSHBUTTON      "Select",   IDB_SELECT,   171, 4, 50, 14, WS_GROUP | WS_TABSTOP
+        PUSHBUTTON      "State",    IDB_STATE,    224, 4, 50, 14, WS_TABSTOP
+        PUSHBUTTON      "Rights",   IDB_RIGHTS,   277, 4, 50, 14, WS_TABSTOP
+    END
+END
+

@@ -1,0 +1,61 @@
+/* --------------------------------------------------------------------
+                         Draw Resource File
+                              Chapter 6
+
+                    Real World Programming for OS/2
+             Copyright (c) 1993 Blain, Delimon, and English
+-------------------------------------------------------------------- */
+
+#include <os2.h>
+#include "draw.h"
+
+ICON ID_APPNAME DRAW.ICO
+BITMAP ID_STAR STAR.BMP
+
+RCINCLUDE ..\common\about.dlg
+
+MENU ID_APPNAME
+BEGIN
+    SUBMENU "~Thermometer",           IDM_DRAW
+      BEGIN
+        MENUITEM "Display",              IDM_THERM, 0, MIA_CHECKED
+        MENUITEM "Start Timer",          IDM_TIMER
+        MENUITEM SEPARATOR
+        MENUITEM "About...",             IDM_ABOUT
+      END
+    SUBMENU "~Areas",                    IDM_AREAS
+      BEGIN
+        MENUITEM "GpiBegin/EndArea",     IDM_AREA_STARS
+        MENUITEM "GpiPolygons",          IDM_POLY_STARS
+      END
+    SUBMENU "~Paths",                    IDM_PATHS
+      BEGIN
+        MENUITEM "Fill Path",             IDM_FILL_PATH
+        MENUITEM "Outline Path",          IDM_OUTLINE_PATH
+        MENUITEM "Convert/Fill Path ALT", IDM_CONVERT_ALT_PATH
+        MENUITEM "Convert/Fill Path WIND",IDM_CONVERT_WIND_PATH
+        MENUITEM "Stroke Path",           IDM_STROKE_PATH
+        MENUITEM "Clip To Path",          IDM_CLIP_PATH
+        MENUITEM "Clip To Stroke Path",   IDM_CLIP_STROKE_PATH
+        MENUITEM SEPARATOR
+        MENUITEM "Line Join Bevel",      IDM_BEVEL, 0, MIA_CHECKED
+        MENUITEM "Line Join Round",      IDM_ROUND
+        MENUITEM "Line Join Mitre",      IDM_MITRE
+        MENUITEM SEPARATOR
+        MENUITEM "Line End Flat",        IDM_FLAT_END, 0, MIA_CHECKED
+        MENUITEM "Line End Round",       IDM_ROUND_END
+        MENUITEM "Line End Square",      IDM_SQUARE_END
+      END
+END
+
+STRINGTABLE LOADONCALL MOVEABLE
+BEGIN
+    IDS_APPNAME     "GPI Draw"
+    IDS_NOB_WIND    "BA_NOBOUNDARY | BA_WINDING"
+    IDS_BOUND_WIND  "BA_BOUNDARY | BA_WINDING"
+    IDS_NOB_ALT     "BA_NOBOUNDARY | BA_ALTERNATE"
+    IDS_BOUND_ALT   "BA_BOUNDARY | BA_ALTERNATE"
+    IDS_TIMERON     "Start Timer"
+    IDS_TIMEROFF    "Stop Timer"
+END
+

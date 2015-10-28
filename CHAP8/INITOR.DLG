@@ -1,0 +1,28 @@
+/* --------------------------------------------------------------------
+                            INITOR Dialog
+                              Chapter 8
+
+                    Real World Programming for OS/2
+             Copyright (c) 1993 Blain, Delimon, and English
+-------------------------------------------------------------------- */
+
+DLGINCLUDE 1 "INITOR.H"
+
+DLGTEMPLATE ADD_DLG LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Add Section", ADD_DLG, 87, 61, 221, 116, FS_SCREENALIGN | 
+            WS_VISIBLE, FCF_SYSMENU | FCF_TITLEBAR
+    BEGIN
+        LTEXT           "Application Name:", -1, 6, 105, 81, 8
+        LTEXT           "Key Name:", -1, 6, 79, 81, 8
+        LTEXT           "Key Data:", -1, 6, 51, 81, 8
+        ENTRYFIELD      "", DID_APP_NAME, 7, 93, 206, 8, ES_MARGIN | 
+                        WS_GROUP
+        ENTRYFIELD      "", DID_KEY_NAME, 7, 66, 206, 8, ES_MARGIN
+        MLE             "", DID_KEY_DATA, 5, 22, 210, 25, MLS_WORDWRAP | 
+                        MLS_VSCROLL | MLS_IGNORETAB
+        DEFPUSHBUTTON   "~Ok", APP_LBOX, 49, 4, 40, 14, WS_DISABLED
+        PUSHBUTTON      "~Cancel", KEY_LBOX, 130, 4, 40, 14
+    END
+END
+

@@ -1,0 +1,21 @@
+#====================================================================
+# PM Font Dependencies Make File
+# Chapter 7
+#
+# Real World Programming for OS/2
+# Copyright (c) 1993 Blain, Delimon, and English
+#====================================================================
+
+#====================================================================
+# Dependencies and Build Items
+#====================================================================
+
+OBJS  = pmfont.obj 
+
+all : pmfont.exe
+
+pmfont.obj: pmfont.c pmfont.h chap7.h
+
+pmfont.res: pmfont.rc pmfont.h chap7.h pmfont.dlg
+
+pmfont.exe: $(OBJS) pmfont.def pmfont.res 

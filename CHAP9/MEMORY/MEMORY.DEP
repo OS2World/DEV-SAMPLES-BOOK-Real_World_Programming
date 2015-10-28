@@ -1,0 +1,22 @@
+#====================================================================
+# Memory Dependencies Make File
+# Chapter 9
+#
+# Real World Programming for OS/2
+# Copyright (c) 1993 Blain, Delimon, and English
+#====================================================================
+
+#====================================================================
+# Dependencies and Build Items
+#====================================================================
+
+ABOUT = ..\..\common\about.obj
+OBJS  = memory.obj
+
+all: memory.exe memory.res
+
+memory.obj: memory.c memory.h
+
+memory.res: memory.rc memory.dlg allocate.dlg memory.h
+
+memory.exe: $(OBJS) memory.res memory.def

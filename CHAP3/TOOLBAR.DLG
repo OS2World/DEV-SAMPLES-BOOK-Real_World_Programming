@@ -1,0 +1,46 @@
+/* --------------------------------------------------------------------
+                         MiniMDI Toolbar Dialog
+                              Chapter 3
+
+                    Real World Programming for OS/2
+             Copyright (c) 1993 Blain, Delimon, and English
+-------------------------------------------------------------------- */
+
+DLGTEMPLATE IDD_TOOLBAR LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Tools", IDD_TOOLBAR, 0, 0, 41, 133, NOT FS_DLGBORDER | FS_BORDER,
+            FCF_TITLEBAR | FCF_NOBYTEALIGN | FCF_NOMOVEWITHOWNER
+    BEGIN
+        PUSHBUTTON      "#200", IDC_WININFO, 9, 115, 24, 18, WS_GROUP | 
+                        WS_TABSTOP | BS_ICON
+        GROUPBOX        "Color",   -1, 1, 43, 40, 71
+        LTEXT           "Red",     -1, 5, 97, 20, 8
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        CONTROL         "", IDC_RED, 8, 88, 27, 12, WC_SPINBUTTON, 
+                        SPBS_READONLY | SPBS_NUMERICONLY | SPBS_MASTER | 
+                        SPBS_JUSTRIGHT | SPBS_FASTSPIN | 
+                        WS_GROUP | WS_TABSTOP | WS_VISIBLE
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        LTEXT           "Green",   -1, 5, 76, 28, 8
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        CONTROL         "", IDC_GREEN, 8, 67, 27, 12, WC_SPINBUTTON, 
+                        SPBS_READONLY | SPBS_NUMERICONLY | SPBS_MASTER | 
+                        SPBS_JUSTRIGHT | SPBS_FASTSPIN | 
+                        WS_GROUP | WS_TABSTOP | WS_VISIBLE
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        LTEXT           "Blue",    -1, 5, 55, 22, 8
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        CONTROL         "", IDC_BLUE, 8, 46, 27, 12, WC_SPINBUTTON, 
+                        SPBS_READONLY | SPBS_NUMERICONLY | SPBS_MASTER | 
+                        SPBS_JUSTRIGHT | SPBS_FASTSPIN | 
+                        WS_GROUP | WS_TABSTOP | WS_VISIBLE
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        GROUPBOX        "Option", -1, 1, 0, 40, 42
+        AUTOCHECKBOX    "Move",  IDC_MOVE,  4, 24, 35, 10, WS_GROUP | WS_TABSTOP
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        AUTOCHECKBOX    "Track", IDC_TRACK, 4, 13, 35, 10, WS_GROUP | WS_TABSTOP
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        AUTOCHECKBOX    "Open",  IDC_OPEN,  4,  2, 36, 10, WS_GROUP | WS_TABSTOP
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+    END
+END

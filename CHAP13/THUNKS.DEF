@@ -1,0 +1,11 @@
+NAME          THUNKS   WINDOWAPI
+DESCRIPTION   'Thunks Program (c) 1993 Blain, Delimon, & English'
+PROTMODE
+
+HEAPSIZE      4096
+STACKSIZE     16384
+
+EXPORTS       
+    ClientWndProc      @1
+    BookInfoDlgProc    @2
+    AboutDlgProc       @3

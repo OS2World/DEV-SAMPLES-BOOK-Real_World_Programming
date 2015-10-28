@@ -1,0 +1,21 @@
+#====================================================================
+# Common Dialogs Dependencies Make File
+# Chapter 4
+#
+# Real World Programming for OS/2
+# Copyright (c) 1993 Blain, Delimon, and English
+#====================================================================
+
+#====================================================================
+# Dependencies and Build Items
+#====================================================================
+
+OBJS = commdlg.obj 
+
+all: commdlg.exe
+
+commdlg.obj: commdlg.c commdlg.h
+
+commdlg.res: commdlg.rc commdlg.h custom.dlg
+
+commdlg.exe: $(OBJS) commdlg.res commdlg.def

@@ -1,0 +1,22 @@
+#====================================================================
+# MiniMDI Dependencies Make File
+# Chapter 3
+#
+# Real World Programming for OS/2
+# Copyright (c) 1993 Blain, Delimon, and English
+#====================================================================
+
+#====================================================================
+# Dependencies and Build Items
+#====================================================================
+
+OBJS         = minimdi.obj 
+IBMCLINKOPTS = 
+            
+all: minimdi.exe minimdi.res
+
+minimdi.obj: minimdi.c minimdi.h
+
+minimdi.res: minimdi.rc minimdi.h toolbar.dlg wininfo.dlg
+
+minimdi.exe: $(OBJS) minimdi.res minimdi.def

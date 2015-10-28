@@ -1,0 +1,29 @@
+/* --------------------------------------------------------------------
+                         Phone Resource File
+                              Chapter 14
+
+                    Real World Programming for OS/2
+             Copyright (c) 1993 Blain, Delimon, and English
+-------------------------------------------------------------------- */
+/* --------------------------------------------------------------------
+                          Phone Resource File
+-------------------------------------------------------------------- */
+
+#include <os2.h>
+#include "phone.h"
+#include "led.h"
+
+ICON ID_APPNAME PHONE.ICO
+
+BITMAP IDB_LED LED.BMP
+
+STRINGTABLE LOADONCALL MOVEABLE
+BEGIN
+    ID_APPNAME       "Phone Communications Application"
+END
+
+rcinclude buttons.dlg
+rcinclude settings.dlg
+rcinclude status.dlg
+rcinclude ..\common\about.dlg
+

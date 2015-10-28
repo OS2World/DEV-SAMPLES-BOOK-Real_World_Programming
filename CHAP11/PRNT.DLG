@@ -1,0 +1,136 @@
+/* --------------------------------------------------------------------
+                            Print Dialogs
+                              Chapter 11
+
+                    Real World Programming for OS/2
+             Copyright (c) 1993 Blain, Delimon, and English
+-------------------------------------------------------------------- */
+
+DLGINCLUDE 1 "DIALOG.H"
+
+DLGTEMPLATE SELECT_PRINTER_DLG LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Select Printer", SELECT_PRINTER_DLG, 65, 89, 253, 69, 
+            WS_VISIBLE, FCF_SYSMENU | FCF_TITLEBAR
+            PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+    BEGIN
+        LISTBOX         DID_QUEUE_NAMES, 5, 23, 241, 40
+        DEFPUSHBUTTON   "~Ok", DID_OK, 4, 3, 40, 14
+        PUSHBUTTON      "Cancel", DID_CANCEL, 56, 3, 40, 14
+        PUSHBUTTON      "Job Properties...", DID_JOBPROPS, 107, 3, 84, 14
+    END
+END
+
+DLGTEMPLATE PRINT_DLG LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Print", PRINT_DLG, 72, 106, 250, 66, WS_VISIBLE, FCF_SYSMENU | 
+            FCF_TITLEBAR
+            PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+    BEGIN
+        LTEXT           "Printer:", -1, 7, 52, 37, 8
+        ENTRYFIELD      "", DID_PRINTER, 48, 54, 196, 8, ES_MARGIN
+        LTEXT           "Document:", 106, 6, 37, 49, 8
+        ENTRYFIELD      "", DID_DOCUMENT, 48, 39, 195, 8, ES_MARGIN
+        LTEXT           "Copies:", -1, 7, 24, 33, 8
+        CONTROL         "", DID_COPIES, 47, 24, 30, 12, WC_SPINBUTTON, 
+                        SPBS_ALLCHARACTERS | SPBS_MASTER | SPBS_SERVANT | 
+                        SPBS_JUSTDEFAULT | SPBS_FASTSPIN | WS_GROUP | 
+                        WS_TABSTOP | WS_VISIBLE
+        LTEXT           "Priority:", -1, 89, 24, 27, 8
+        CONTROL         "", DID_PRIORITY, 120, 24, 52, 12, WC_SPINBUTTON, 
+                        SPBS_ALLCHARACTERS | SPBS_READONLY | SPBS_MASTER | 
+                        SPBS_SERVANT | SPBS_JUSTDEFAULT | SPBS_JUSTLEFT | 
+                        SPBS_FASTSPIN | WS_GROUP | WS_TABSTOP | WS_VISIBLE
+        DEFPUSHBUTTON   "Ok", DID_OK, 14, 4, 40, 14
+        PUSHBUTTON      "Cancel", DID_CANCEL, 63, 4, 40, 14
+    END
+END
+
+DLGTEMPLATE PRINT_STATUS_DLG LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Print Status", PRINT_STATUS_DLG, 94, 153, 240, 61, WS_VISIBLE, 
+            FCF_SYSMENU | FCF_TITLEBAR
+            PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+    BEGIN
+        LTEXT           "Job:", -1, 5, 48, 31, 8
+        LTEXT           "", DID_JOBNAME, 42, 48, 184, 8
+        LTEXT           "Printer:", -1, 5, 36, 31, 8
+        LTEXT           "", DID_PRINTER, 42, 37, 184, 8
+        LTEXT           "Status:", -1, 5, 24, 31, 8
+        LTEXT           "", DID_STATUS, 42, 25, 184, 8
+        PUSHBUTTON      "Cancel", DID_CANCEL, 92, 4, 40, 14
+        DEFPUSHBUTTON   "Ok", DID_OK, 91, 4, 40, 14
+    END
+END
+
+DLGTEMPLATE QUEUE_INFO_DLG LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Queue And Printer Details", QUEUE_INFO_DLG, 25, 42, 378, 160, 
+            WS_VISIBLE, FCF_SYSMENU | FCF_TITLEBAR
+            PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+    BEGIN
+        LISTBOX         DID_QUEUE_NAMES, 6, 117, 181, 36
+        LTEXT           "Queue Description", -1, 8, 151, 90, 8
+        GROUPBOX        "Queue", SELECT_PRINTER_DLG, 6, 55, 182, 59
+        LTEXT           "Queue Name:", -1, 11, 98, 45, 8
+        LTEXT           "", DID_QUEUE_NAME, 61, 98, 111, 8
+        LTEXT           "Default Device:", -1, 11, 88, 50, 8
+        LTEXT           "", DID_DEFAULT_DEVICE, 61, 88, 121, 8
+        LTEXT           "Print Devices:", -1, 11, 78, 48, 8
+        LTEXT           "", DID_PRINTERS, 61, 78, 121, 8
+        LTEXT           "Priority:", -1, 11, 68, 26, 8
+        LTEXT           "", DID_PRIORITY, 38, 68, 24, 8
+        LTEXT           "Status:", -1, 70, 68, 25, 8
+        LTEXT           "", DID_STATUS, 98, 68, 30, 8
+        LTEXT           "Start Time:", -1, 11, 58, 39, 8
+        LTEXT           "", DID_START_TIME, 52, 58, 29, 8
+        LTEXT           "End Time:", -1, 98, 58, 38, 8
+        LTEXT           "", DID_END_TIME, 142, 58, 32, 8
+        LTEXT           "Jobs:", -1, 138, 68, 20, 8
+        LTEXT           "", DID_NUMBER_JOBS, 162, 68, 20, 8
+        LISTBOX         DID_FORMS, 197, 117, 173, 34
+        LTEXT           "Forms", -1, 198, 151, 27, 8
+        GROUPBOX        "Form Information", -1, 196, 55, 175, 59
+        LTEXT           "Width in MM:", -1, 204, 96, 44, 8
+        LTEXT           "", DID_FORM_CX, 257, 96, 18, 8
+        LTEXT           "Height in MM:", -1, 285, 96, 47, 8
+        LTEXT           "", DID_FORM_CY, 338, 96, 18, 8
+        LTEXT           "Left Clip:", -1, 204, 76, 29, 8
+        LTEXT           "", DID_LEFT_CLIP, 241, 76, 20, 8
+        LTEXT           "Bottom Clip:", -1, 273, 76, 38, 8
+        LTEXT           "", DID_BOTTOM_CLIP, 320, 76, 20, 8
+        LTEXT           "Attribute:", PRINT_STATUS_DLG, 204, 86, 30, 8
+        LTEXT           "", DID_FORM_ATTR, 238, 86, 87, 8
+        LTEXT           "Right Clip:", -1, 204, 66, 32, 8
+        LTEXT           "", DID_RIGHT_CLIP, 241, 66, 20, 8
+        LTEXT           "Top Clip:", -1, 272, 66, 37, 8
+        LTEXT           "", DID_TOP_CLIP, 320, 66, 20, 8
+        GROUPBOX        "Device Capabilites", -1, 5, 22, 367, 30
+        LTEXT           "Technology:", -1, 11, 35, 40, 8
+        LTEXT           "", DID_TECHNOLOGY, 51, 35, 72, 8
+        LTEXT           "Width in Pels:", -1, 126, 35, 43, 8
+        LTEXT           "", DID_CAPS_WIDTH, 170, 35, 19, 8
+        LTEXT           "Height in Pels:", PRINT_DLG, 194, 35, 47, 8
+        LTEXT           "", DID_CAPS_HEIGHT, 239, 35, 20, 8
+        LTEXT           "Horiz Res:", 106, 260, 35, 33, 8
+        LTEXT           "", DID_HORZ_RES, 293, 35, 20, 8
+        LTEXT           "Vert Res:", -1, 316, 35, 30, 8
+        LTEXT           "", DID_VERT_RES, 348, 35, 20, 8
+        LTEXT           "GpiBitBlt:", -1, 11, 25, 32, 8
+        LTEXT           "", DID_BITBLT, 44, 25, 20, 8
+        LTEXT           "Banding:", -1, 67, 25, 31, 8
+        LTEXT           "", DID_BANDING, 97, 25, 20, 8
+        LTEXT           "GpiSetPel:", -1, 123, 25, 35, 8
+        LTEXT           "", DID_SETPEL, 158, 25, 20, 8
+        LTEXT           "Raster Fonts:", -1, 184, 25, 44, 8
+        LTEXT           "", DID_RASTER_FONT, 228, 25, 20, 8
+        LTEXT           "Kerning:", -1, 256, 25, 29, 8
+        LTEXT           "", DID_KERNING, 286, 25, 20, 8
+        LTEXT           "Palette:", -1, 318, 25, 28, 8
+        LTEXT           "", DID_PALETTE, 347, 25, 20, 8
+        DEFPUSHBUTTON   "Ok", DID_OK, 6, 3, 40, 14
+        PUSHBUTTON      "Cancel", DID_CANCEL, 55, 3, 40, 14
+        PUSHBUTTON      "Job Properties...", DID_JOBPROPS, 106, 3, 68, 14
+        PUSHBUTTON      "Update", DID_UPDATE, 184, 3, 40, 14
+    END
+END

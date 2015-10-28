@@ -1,0 +1,72 @@
+/* --------------------------------------------------------------------
+                        PM Font Resource File
+                              Chapter 7
+
+                    Real World Programming for OS/2
+             Copyright (c) 1993 Blain, Delimon, and English
+-------------------------------------------------------------------- */
+
+#include <os2.h>
+#include "chap7.h"
+#include "pmfont.h"
+
+
+RCINCLUDE pmfont.dlg
+RCINCLUDE ..\common\about.dlg
+
+ICON ID_APPNAME PMFONT.ICO
+
+MENU ID_APPNAME
+BEGIN
+    SUBMENU "~Display",               IDM_DISPLAY
+      BEGIN
+        MENUITEM "Font Metrics",      IDM_METRICS, 0, MIA_CHECKED
+        MENUITEM "Rotation / Shear",  IDM_ROTATION
+        MENUITEM "About...",          IDM_ABOUT
+      END
+    SUBMENU "~Charcter Mode",      IDM_CHMODE
+      BEGIN
+        MENUITEM "Mode 1",     IDM_CHMODE_ONE, 0, MIA_CHECKED
+        MENUITEM "Mode 2",     IDM_CHMODE_TWO
+        MENUITEM "Mode 3",     IDM_CHMODE_THREE
+      END
+    SUBMENU "Font Attribute",       IDM_ATTRIBUTE
+      BEGIN
+        MENUITEM "Italic",     IDM_ATTR_ITALIC
+        MENUITEM "Bold",       IDM_ATTR_BOLD
+        MENUITEM "Underscore", IDM_ATTR_UNDERSCORE
+        MENUITEM "Strikeout",  IDM_ATTR_STRIKEOUT
+        MENUITEM "Outline",    IDM_ATTR_OUTLINE
+      END
+    SUBMENU "Code Page",       IDM_CODEPAGE
+      BEGIN
+        MENUITEM "ASCII 437 US English",      IDM_CP437
+        MENUITEM "ASCII 850 Multilingual",    IDM_CP850,0,MIA_CHECKED
+        MENUITEM "ASCII 852 Multilingual",    IDM_CP852
+        MENUITEM "ASCII 857 Turkey",          IDM_CP857
+        MENUITEM "ASCII 860 Portugese",       IDM_CP860
+        MENUITEM "ASCII 861 Iceland",         IDM_CP861
+        MENUITEM "ASCII 863 French Canadian", IDM_CP863
+        MENUITEM "ASCII 865 Norwegian",       IDM_CP865
+        MENUITEM "ASCII 1004 Desktop Publishing", IDM_CP1004
+        MENUITEM "EBCDIC 037 US English",       IDM_CP037,
+            MIS_BREAKSEPARATOR
+        MENUITEM "EBCDIC 273 Austrian/German",  IDM_CP273
+        MENUITEM "EBCDIC 274 Belgian",          IDM_CP274
+        MENUITEM "EBCDIC 277 Danish/Norwegian", IDM_CP277
+        MENUITEM "EBCDIC 278 Finnish/Swedish",  IDM_CP278
+        MENUITEM "EBCDIC 280 Italian",          IDM_CP280
+        MENUITEM "EBCDIC 282 Portugese",        IDM_CP282
+        MENUITEM "EBCDIC 284 Spanish",          IDM_CP284
+        MENUITEM "EBCDIC 285 UK-English",       IDM_CP285
+      END
+END
+
+
+STRINGTABLE PRELOAD MOVEABLE
+BEGIN
+    IDS_APPNAME      "PM Font Browser"
+    IDS_DISPLAY_TEXT "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz"
+    IDS_SPECIAL_TEXT "абвгдежзийклмноп"
+    IDS_USER_TEXT    "Sample Text String"
+END

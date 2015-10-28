@@ -1,0 +1,37 @@
+/* --------------------------------------------------------------------
+                             About Dialog 
+
+                    Real World Programming for OS/2
+             Copyright (c) 1993 Blain, Delimon, and English
+-------------------------------------------------------------------- */
+
+DLGTEMPLATE 10000 LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "", 10000, 80, 37, 218, 83, 
+            FS_BORDER | NOT FS_DLGBORDER | WS_VISIBLE | NOT WS_SAVEBITS, 
+            FCF_NOBYTEALIGN
+    PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+    BEGIN
+        CONTROL    "", 10002, 8, 55, 202, 20, WC_STATIC, 
+                       SS_TEXT | WS_VISIBLE
+        ICON       ID_APPNAME, ID_APPNAME, 10,  57, 20, 16, WS_GROUP
+        CTEXT      "", 10001, 32, 62, 154,  8
+                   PRESPARAMS PP_FOREGROUNDCOLORINDEX, CLR_BLACK
+
+        CONTROL    "", 10003, 8, 23, 202, 25, WC_STATIC, 
+                       SS_TEXT | WS_VISIBLE
+        LTEXT      "From the book:", -1, 10, 40, 48, 7
+        CTEXT      "Real World Programming for OS/2", 
+                   -1,        60, 40, 146,  7
+                   PRESPARAMS PP_FOREGROUNDCOLORINDEX, CLR_BLACK
+        CTEXT      "Copyright 1993 Blain, Delimon, and English", 
+                   -1,        60, 32, 146,  7
+                   PRESPARAMS PP_FOREGROUNDCOLORINDEX, CLR_BLACK
+
+        LTEXT      "Published by:", -1, 10, 24, 48, 7
+        CTEXT      "SAMS / Prentice Hall Computer Publishing", 
+                   -1,        60, 24, 146,  7    
+                   PRESPARAMS PP_FOREGROUNDCOLORINDEX, CLR_BLACK
+        PUSHBUTTON "OK", DID_OK, 90,  4,  40, 14
+    END
+END

@@ -1,0 +1,25 @@
+#====================================================================
+# DLL Sample Dependencies Make File
+# Chapter 10
+#
+# Real World Programming for OS/2
+# Copyright (c) 1993 Blain, Delimon, and English
+#====================================================================
+
+#====================================================================
+# Dependencies and Build Items
+#====================================================================
+
+OBJS = dllsamp.obj 
+
+all: dllsamp.lib dllsamp.dll 
+
+dllsamp.lib: dllsamp.def
+    implib $*.lib $*.def
+
+dllsamp.obj: dllsamp.c dllsamp.h
+
+dllsamp.res: dllsamp.rc 
+
+dllsamp.dll: $(OBJS) dllsamp.def dllsamp.res
+

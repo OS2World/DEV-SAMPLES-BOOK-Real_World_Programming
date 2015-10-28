@@ -1,0 +1,10 @@
+NAME          PMFONT WINDOWAPI
+DESCRIPTION   'PM Font Sample Program (c) 1993 Blain, Delimon, & English'
+PROTMODE
+HEAPSIZE      4096
+STACKSIZE     32768
+EXPORTS       ClientWndProc
+              MetricsWndProc
+              ShearWndProc
+              AboutDlgProc
+  

@@ -1,0 +1,7 @@
+NAME          APPSAMP   WINDOWAPI
+DESCRIPTION   'AppSamp (c) 1993 Blain, Delimon, & English'
+PROTMODE
+HEAPSIZE      4096
+STACKSIZE     16384
+EXPORTS       ClientWndProc
+              AboutDlgProc

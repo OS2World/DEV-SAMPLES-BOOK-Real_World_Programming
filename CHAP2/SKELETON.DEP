@@ -1,0 +1,23 @@
+#====================================================================
+# Skeleton Dependencies Make File
+# Chapter 2
+#
+# Real World Programming for OS/2
+# Copyright (c) 1993 Blain, Delimon, and English
+#====================================================================
+
+#====================================================================
+# Dependencies and Build Items
+#====================================================================
+
+OBJS = skeleton.obj 
+
+all: skeleton.exe 
+
+skeleton.obj: skeleton.c skeleton.h
+
+skeleton.res: skeleton.rc skeleton.ico
+
+skeleton.exe: $(OBJS) skeleton.res skeleton.def
+
+

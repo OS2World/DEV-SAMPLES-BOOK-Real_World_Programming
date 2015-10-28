@@ -1,0 +1,40 @@
+/* -------------------------------------------------------------------
+                          Threads Resource File
+                              Chapter 12
+
+                    Real World Programming for OS/2
+             Copyright (c) 1993 Blain, Delimon, and English
+------------------------------------------------------------------- */
+
+#include <os2.h>
+#include "threads.h"
+#include "..\common\controls.h"
+
+ICON ID_APPNAME THREADS.ICO
+
+MENU ID_APPNAME
+{
+    SUBMENU "~Threads",              IDM_THREADS
+    {
+        SUBMENU "~New Thread",       IDM_NEWTHREAD
+        {
+            MENUITEM "~Message Queue Thread",     IDM_NEWQMSGTHREAD
+            MENUITEM "~Sorting Thread",           IDM_NEWSORTINGTHREAD
+        }
+        MENUITEM "~Kill All Message Queue Threads", IDM_KILLALLTHREADS
+        MENUITEM "",                  -1,         MIS_SEPARATOR
+        MENUITEM "A~rrange",                      IDM_ARRANGE
+        MENUITEM "",                  -1,         MIS_SEPARATOR
+        MENUITEM "~About...",         IDM_ABOUT
+    }
+}
+
+STRINGTABLE LOADONCALL MOVEABLE
+BEGIN
+    ID_APPNAME       "Threads Demonstration Application"
+END
+
+rcinclude tid.dlg
+rcinclude sort.dlg
+rcinclude ..\common\about.dlg
+

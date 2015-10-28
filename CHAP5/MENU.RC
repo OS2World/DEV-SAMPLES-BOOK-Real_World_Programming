@@ -1,0 +1,75 @@
+/* --------------------------------------------------------------------
+                          Menu Resource File
+                              Chapter 5
+
+                    Real World Programming for OS/2
+             Copyright (c) 1993 Blain, Delimon, and English
+-------------------------------------------------------------------- */
+
+#include <os2.h>
+#include "menu.h"
+
+ICON ID_APPNAME MENU.ICO
+
+/* Checkmark bitmaps */
+BITMAP IDBMP_CHECK1     "CHECK1.BMP"
+BITMAP IDBMP_UNCHECK1   "UNCHECK1.BMP"
+BITMAP IDBMP_CHECK2     "CHECK2.BMP"
+BITMAP IDBMP_UNCHECK2   "UNCHECK2.BMP"
+
+/* Bitmap menu item bitmaps */
+BITMAP IDBMP_BMPITEM1   "BMPITEM1.BMP"
+BITMAP IDBMP_BMPITEM2   "BMPITEM2.BMP"
+
+/* Ownerdraw bitmaps */
+BITMAP IDBMP_ODITEM1    "ODRED.BMP"
+BITMAP IDBMP_ODITEM2    "ODGREEN.BMP"
+BITMAP IDBMP_ODITEM3    "ODBLUE.BMP"
+ 
+
+STRINGTABLE LOADONCALL MOVEABLE
+BEGIN
+    ID_APPNAME       "Menu Application"
+    IDS_WINDOWCOLOR  "Window Color"
+    IDS_TEXTCOLOR    "Text Color"
+END
+
+MENU ID_APPNAME
+{
+    SUBMENU "~Style",           IDM_STYLE
+    {
+        MENUITEM "~Normal",        IDM_STYLENORMAL, 0, MIA_CHECKED
+        MENUITEM "~Underscore",    IDM_STYLEUNDERSCORE
+        MENUITEM "~Strikeout",     IDM_STYLESTRIKEOUT
+    }
+    SUBMENU "~Alignment",       IDM_ALIGN,       MIS_TEXT
+    {
+        MENUITEM "Horizontal", -1,               
+             MIS_STATIC, MIA_FRAMED
+        MENUITEM "  ~Left",      IDM_ALIGNLEFT,    
+        MENUITEM "  ~Center",    IDM_ALIGNCENTER,  0, MIA_CHECKED
+        MENUITEM "  ~Right",     IDM_ALIGNRIGHT,   
+        MENUITEM "Vertical",   -1,               
+             MIS_BREAKSEPARATOR | MIS_STATIC, MIA_FRAMED
+        MENUITEM "  ~Top",       IDM_ALIGNTOP,     
+        MENUITEM "  ~Middle",    IDM_ALIGNMIDDLE,  0, MIA_CHECKED
+        MENUITEM "  ~Bottom",    IDM_ALIGNBOTTOM,  
+    }
+}
+
+MENU COLOR_MENU
+{
+    MENUITEM "", IDC_COLOR, MIS_STATIC
+    MENUITEM "", IDBMP_ODITEM1, MIS_OWNERDRAW | MIS_BREAK
+    MENUITEM "", IDBMP_ODITEM2, MIS_OWNERDRAW | MIS_BREAK 
+    MENUITEM "", IDBMP_ODITEM3, MIS_OWNERDRAW | MIS_BREAK
+}
+
+MENU BITMAP_MENU
+{
+    MENUITEM "#54", IDM_BMPITEM1, MIS_BITMAP
+    MENUITEM "#55", IDM_BMPITEM2, MIS_BITMAP
+}
+
+rcinclude ..\common\about.dlg
+   

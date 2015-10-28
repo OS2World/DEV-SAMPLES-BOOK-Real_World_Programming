@@ -1,0 +1,27 @@
+#====================================================================
+# Book16 Make File
+# Chapter 13
+#
+# Real World Programming for OS/2
+# Copyright (c) 1993 Blain, Delimon, and English
+#====================================================================
+
+#====================================================================
+# Dependencies and Build Items
+#
+# NOTE: This DLL must be built using a 16-bit compiler
+#====================================================================
+
+OBJS = book16.obj
+
+all: book16.dll book16.lib
+
+book16.obj: book16.c book16.h
+    cl -c -AL -G2sw $*.c > $*.err
+
+book16.dll: $(OBJS) book16.def
+    link /nod /noe /map /align:16 $(OBJS),$*.dll,$*.map,os2286 llibcdll,$*.def
+
+book16.lib: book16.def
+    implib $*.lib $*.def
+

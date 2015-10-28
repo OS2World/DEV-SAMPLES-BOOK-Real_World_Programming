@@ -1,0 +1,37 @@
+/* --------------------------------------------------------------------
+                       Memory Allocation Dialog
+                              Chapter 9
+
+                    Real World Programming for OS/2
+             Copyright (c) 1993 Blain, Delimon, and English
+-------------------------------------------------------------------- */
+
+DLGTEMPLATE IDD_ALLOCATE LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Allocate Memory", IDD_ALLOCATE, -5, 53, 264, 72, WS_VISIBLE, FCF_SYSMENU | 
+            FCF_TITLEBAR
+    BEGIN
+        LTEXT           "Number of bytes", -1, 3, 58, 72, 8
+        CONTROL         "", IDB_NUMBYTES, 76, 56, 64, 12, WC_SPINBUTTON, 
+                        SPBS_NUMERICONLY | SPBS_MASTER | 
+                        SPBS_JUSTRIGHT | SPBS_FASTSPIN | WS_TABSTOP | WS_VISIBLE
+        LTEXT           "Repeat", -1, 144, 58, 36, 8
+        CONTROL         "", IDB_REPEAT,  181, 56, 30, 12, WC_SPINBUTTON, 
+                        SPBS_NUMERICONLY | SPBS_MASTER | 
+                        SPBS_JUSTRIGHT | SPBS_FASTSPIN | WS_TABSTOP | WS_VISIBLE
+        GROUPBOX        "Type",          -1, 3, 24, 87, 31
+        AUTORADIOBUTTON "Committed",   IDB_COMMITTED, 9, 37, 58, 10, WS_TABSTOP
+        AUTORADIOBUTTON "Uncommitted", IDB_UNCOMMITTED, 9, 27, 68, 10, WS_TABSTOP | 
+        GROUPBOX        "Shareability",  -1, 97, 24, 77, 31
+        AUTORADIOBUTTON "Shared",      IDB_SHARED, 101, 37, 44, 10, WS_TABSTOP
+        AUTORADIOBUTTON "NonShared",   IDB_NONSHARED, 101, 27, 61, 10, WS_TABSTOP
+        GROUPBOX        "Access Rights", -1, 181, 15, 77, 40
+        AUTOCHECKBOX    "Read",        IDB_READ, 186, 37, 40, 10
+        AUTOCHECKBOX    "Write",       IDB_WRITE, 186, 27, 40, 10
+        AUTOCHECKBOX    "Execute",     IDB_EXECUTE, 186, 17, 46, 10
+        AUTOCHECKBOX    "Tiled",       IDB_TILED, 102, 7, 34, 10, WS_GROUP
+        DEFPUSHBUTTON   "OK",          DID_OK, 4, 4, 40, 14, WS_GROUP
+        PUSHBUTTON      "Cancel",      DID_CANCEL, 47, 4, 40, 14
+    END
+END
+

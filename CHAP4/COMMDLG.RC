@@ -1,0 +1,50 @@
+/* --------------------------------------------------------------------
+                      Common Dialogs Resource File
+                              Chapter 4
+
+                    Real World Programming for OS/2
+             Copyright (c) 1993 Blain, Delimon, and English
+-------------------------------------------------------------------- */
+
+#define INCL_WINSTDDLGS
+#include <os2.h>
+#include "commdlg.h"
+
+RCINCLUDE custom.dlg
+RCINCLUDE ..\common\about.dlg
+
+ICON ID_APPNAME commdlg.ICO
+
+MENU MAIN_MENU PRELOAD MOVEABLE DISCARDABLE
+BEGIN
+  SUBMENU "~File",2
+     BEGIN
+       MENUITEM "Basic Open...",             IDM_OPEN1
+       MENUITEM "Open And Display...",       IDM_OPEN2
+       MENUITEM "Custom Open Template...",   IDM_OPEN3
+       MENUITEM "Save As...",                IDM_SAVEAS1
+       MENUITEM "About...",                  IDM_ABOUT
+     END
+  SUBMENU "~Font",3
+     BEGIN
+       MENUITEM "Basic Font...",             IDM_FONT1
+       MENUITEM "Change Font...",            IDM_FONT2
+       MENUITEM "Modeless Change Font...",   IDM_FONT3
+     END
+END
+
+STRINGTABLE LOADONCALL MOVEABLE
+BEGIN
+    IDS_APPNAME       "Common Dialogs Demo"
+    IDS_OPEN          "Open File"
+    IDS_SAVE          "Save As"
+    IDS_FONT          "Change Font"
+    IDS_DASH          " - "
+    IDS_PATH          "*.TXT"
+    IDS_UPDATE        "Direct Update"
+    IDS_OPEN_ERROR    "Unable to open selected file"
+    IDS_MEMORY_ERROR  "Unable to allocate memory to display selected file"
+    IDS_READ_ERROR    "Unable to read selected file"
+    IDS_FONTDLG_ERROR "Unable to create font selection dialog"
+END
+

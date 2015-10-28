@@ -1,0 +1,7 @@
+#include <os2.h>
+
+STRINGTABLE LOADONCALL MOVEABLE
+BEGIN
+    1 "DllSamp"
+END
+

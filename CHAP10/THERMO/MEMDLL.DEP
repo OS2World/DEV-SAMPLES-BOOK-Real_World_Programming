@@ -1,0 +1,34 @@
+#====================================================================
+# MemDLL Dependencies Make File
+# Chapter 10
+#
+# Real World Programming for OS/2
+# Copyright (c) 1993 Blain, Delimon, and English
+#====================================================================
+
+#====================================================================
+# Dependencies and Build Items
+#====================================================================
+
+# NOTE: MemInst must be built by MemInst.dep
+OBJS           = memdll.obj meminst.obj 
+CL386INITOBJ   = meminit.obj
+ZORTECHINITOBJ = meminit.obj
+BORLANDINITOBJ = meminit.obj
+ZORTECHLINKER  = link386
+IBMCOPTS       = -Ge-
+
+all: memdll.lib memdll.dll
+
+memdll.lib: memdll.def
+    implib $*.lib $*.def
+
+memdll.obj: memdll.c memdll.h meminst.h
+
+meminit.obj: meminit.asm
+
+memdll.res: memdll.rc
+
+memdll.dll: $(OBJS) meminit.obj memdll.res memdll.def
+
+ 

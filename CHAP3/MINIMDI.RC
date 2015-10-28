@@ -1,0 +1,57 @@
+/* --------------------------------------------------------------------
+                        MiniMDI Resource File
+                              Chapter 3
+
+                    Real World Programming for OS/2
+             Copyright (c) 1993 Blain, Delimon, and English
+-------------------------------------------------------------------- */
+
+#include <os2.h>
+#include "minimdi.h"
+
+/* Icons    */
+ICON    ID_APPNAME        MINIMDI.ICO
+ICON    ID_CHILDWINDOW    CHILD.ICO
+ICON    IDC_WININFO       WININFO.ICO
+
+/* Pointers */
+POINTER IDPTR_HEART       HEART.PTR
+POINTER IDPTR_CLIENT      CLIENT.PTR
+POINTER IDPTR_SYSMENU     SYSMENU.PTR
+POINTER IDPTR_MENU        MENU.PTR
+POINTER IDPTR_MINMAX      MINMAX.PTR
+POINTER IDPTR_LEFT        LEFT.PTR
+POINTER IDPTR_TOP         TOP.PTR
+POINTER IDPTR_LEFTTOP     LTOP.PTR
+POINTER IDPTR_RIGHTTOP    RTOP.PTR
+POINTER IDPTR_TITLEBAR    TITLEBAR.PTR
+POINTER IDPTR_POPUPMENU   POPUP.PTR
+
+STRINGTABLE LOADONCALL MOVEABLE
+BEGIN
+    ID_APPNAME      "MiniMDI Application"
+END
+
+MENU ID_APPNAME
+{
+    SUBMENU "~Window",         IDM_WINDOW
+    {
+        MENUITEM "~New Child",     IDM_NEWCHILD
+        MENUITEM "Ne~xt Child",    IDM_NEXTCHILD
+        MENUITEM "",               -1,            MIS_SEPARATOR
+        MENUITEM "~Close All",     IDM_CLOSEALL
+        MENUITEM "",               -1,            MIS_SEPARATOR
+        MENUITEM "~About",         IDM_ABOUT
+    }
+    SUBMENU "~Arrange",            IDM_ARRANGEMENU
+    {
+        MENUITEM "~Tile",          IDM_TILE
+        MENUITEM "~Cascade",       IDM_CASCADE
+        MENUITEM "~Arrange Icons", IDM_ARRANGE
+    }
+}
+
+rcinclude toolbar.dlg
+rcinclude wininfo.dlg
+rcinclude ..\common\about.dlg
+

@@ -1,0 +1,22 @@
+#====================================================================
+# MemMap Dependencies Make File
+# Chapter 9
+#
+# Real World Programming for OS/2
+# Copyright (c) 1993 Blain, Delimon, and English
+#====================================================================
+
+#====================================================================
+# Dependencies and Build Items
+#====================================================================
+
+ABOUT = ..\..\common\about.obj
+OBJS  = memmap.obj
+
+all: memmap.exe memmap.res
+
+memmap.obj: memmap.c memmap.h
+
+memmap.res: memmap.rc memmap.dlg
+
+memmap.exe: $(OBJS) memmap.res memmap.def

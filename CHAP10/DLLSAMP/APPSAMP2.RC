@@ -1,0 +1,33 @@
+/* --------------------------------------------------------------------
+                        APPSAMP Resource File
+                              Chapter 10
+
+                    Real World Programming for OS/2
+             Copyright (c) 1993 Blain, Delimon, and English
+-------------------------------------------------------------------- */
+
+#include <os2.h>
+#include "appsamp.h"
+
+/* Icons    */
+ICON    ID_APPNAME        APPSAMP.ICO
+
+STRINGTABLE LOADONCALL MOVEABLE
+BEGIN
+    ID_APPNAME      "DLL Sample Application (Dynamic Load)"
+END
+
+MENU ID_APPNAME
+{
+    SUBMENU "~Color",           IDM_COLOR
+    {
+        MENUITEM "~Red",        IDM_RED
+        MENUITEM "~Green",      IDM_GREEN
+        MENUITEM "~Blue",       IDM_BLUE
+    }
+    MENUITEM "Cen~ter",         IDM_CENTER
+    MENUITEM "",               -1,            MIS_SEPARATOR
+    MENUITEM "~About",          IDM_ABOUT
+}
+
+rcinclude ..\..\common\about.dlg

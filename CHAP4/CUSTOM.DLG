@@ -1,0 +1,32 @@
+/* -------------------------------------------------------------------
+                        Custom File Open Dialog
+                              Chapter 4
+
+                    Real World Programming for OS/2
+             Copyright (c) 1993 Blain, Delimon, and English
+-------------------------------------------------------------------- */
+
+DLGTEMPLATE OPEN_DIALOG LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Open File", OPEN_DIALOG, 27, 16, 277, 130, FS_SCREENALIGN | 
+            WS_VISIBLE, FCF_SYSMENU | FCF_TITLEBAR
+    BEGIN
+        LTEXT           "Open Filename:", DID_FILENAME_TXT, 7, 119, 113, 8
+        ENTRYFIELD      "", DID_FILENAME_ED, 8, 108, 260, 8, ES_MARGIN
+        LTEXT           "Drive:", DID_DRIVE_TXT, 7, 96, 64, 8
+        CONTROL         "", DID_DRIVE_CB, 6, 60, 90, 35, WC_COMBOBOX, 
+                        CBS_DROPDOWNLIST | WS_GROUP | WS_TABSTOP | 
+                        WS_VISIBLE
+        LTEXT           "File Type:", DID_FILTER_TXT, 111, 96, 68, 8
+        CONTROL         "", DID_FILTER_CB, 108, 60, 162, 35, WC_COMBOBOX, 
+                        CBS_DROPDOWNLIST | WS_TABSTOP | WS_VISIBLE
+        LTEXT           "Directory:", DID_DIRECTORY_TXT, 7, 72, 78, 8
+        LISTBOX         DID_DIRECTORY_LB, 7, 23, 89, 54, LS_HORZSCROLL
+        LTEXT           "Files:", DID_FILES_TXT, 111, 72, 72, 8
+        LISTBOX         DID_FILES_LB, 108, 23, 162, 48, LS_HORZSCROLL
+        PUSHBUTTON      "~Ok", DID_OK, 7, 4, 40, 14, WS_GROUP | BS_DEFAULT
+        PUSHBUTTON      "~Cancel", DID_CANCEL, 60, 4, 40, 14
+        AUTOCHECKBOX    "Save Directory", DID_SAVE_DIR, 179, 5, 84, 10, 
+                        WS_GROUP
+    END
+END

@@ -1,0 +1,23 @@
+#====================================================================
+# Thermometer Dependencies Make File
+# Chapter 10
+#
+# Real World Programming for OS/2
+# Copyright (c) 1993 Blain, Delimon, and English
+#====================================================================
+
+#====================================================================
+# Dependencies and Build Items
+#====================================================================
+
+ABOUT = ..\..\common\about.obj
+OBJS  = thermo.obj
+LIBS  = memdll controls 
+
+all: thermo.exe thermo.res
+
+thermo.obj: thermo.c thermo.h controls.h
+
+thermo.res: thermo.rc thermo.dlg
+
+thermo.exe: $(OBJS) thermo.res thermo.def

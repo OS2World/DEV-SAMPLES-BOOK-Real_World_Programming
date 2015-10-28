@@ -1,0 +1,13 @@
+NAME          PHONE   WINDOWAPI
+DESCRIPTION   'Phone Communications Program (c) 1993 Blain, Delimon, & English'
+PROTMODE
+
+HEAPSIZE      4096
+STACKSIZE     16384
+
+EXPORTS       
+    ClientWndProc     @1
+    SettingsDlgProc   @2
+    StatusDlgProc     @3
+    LEDWndProc        @4
+    AboutDlgProc      @5 

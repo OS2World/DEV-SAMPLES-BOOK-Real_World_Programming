@@ -1,0 +1,34 @@
+/* --------------------------------------------------------------------
+                            MemMap Dialog
+                              Chapter 9
+
+                    Real World Programming for OS/2
+             Copyright (c) 1993 Blain, Delimon, and English
+-------------------------------------------------------------------- */
+
+DLGTEMPLATE ID_APPNAME LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Memory Map", ID_APPNAME, 36, 17, 302, 165, 
+            WS_VISIBLE | FS_DLGBORDER, 
+            FCF_SYSMENU | FCF_TITLEBAR | FCF_DLGBORDER |
+            FCF_TASKLIST | FCF_ICON;
+    BEGIN
+        LTEXT           "Address", -1, 15, 145, 37, 8
+        LTEXT           "Page", -1, 139, 154, 24, 8
+        LTEXT           "0 1 2 3 4 5 6 7 8 9 A B C D E F", IDT_PAGES, 64, 145, 174, 8
+                        PRESPARAMS PP_FONTNAMESIZE, "10.System Monospaced"
+        LTEXT           "Type", -1, 248, 145, 22, 8
+        LTEXT           ". = Free  A = Allocated  C = Committed  * = Base", 
+                        -1, 77, 6, 207, 8
+        LISTBOX         IDL_MEMLIST, 10, 36, 282, 107
+                        PRESPARAMS PP_FONTNAMESIZE, "10.System Monospaced"
+        PUSHBUTTON      "Refresh", 11, 8, 4, 45, 14
+        LTEXT           "Start Address", DID_CANCEL, 9, 23, 60, 8
+        CONTROL         "", IDB_STARTADDRESS, 73, 20, 64, 12, WC_SPINBUTTON, 
+                        SPBS_ALLCHARACTERS | SPBS_READONLY |
+                        SPBS_MASTER | SPBS_JUSTRIGHT | 
+                        SPBS_FASTSPIN | WS_GROUP | WS_TABSTOP | WS_VISIBLE
+                        PRESPARAMS PP_FONTNAMESIZE, "10.System Monospaced"
+    END
+END
+

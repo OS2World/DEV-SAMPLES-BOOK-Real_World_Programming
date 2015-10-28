@@ -1,0 +1,25 @@
+#====================================================================
+# Thunks Dependencies Make File
+# Chapter 13
+#
+# Real World Programming for OS/2
+# Copyright (c) 1993 Blain, Delimon, and English
+#====================================================================
+
+#====================================================================
+# Dependencies and Build Items
+#====================================================================
+           
+OBJS          = thunks.obj thunkasm.obj
+LIBS          = book16
+ZORTECHLINKER = link386
+IBMCLINKOPTS  = 
+
+all: thunks.exe thunks.res
+
+thunks.obj: thunks.c thunks.h book16.h
+
+thunks.res: thunks.rc bookinfo.dlg
+
+thunks.exe: $(OBJS) thunks.res thunks.def
+

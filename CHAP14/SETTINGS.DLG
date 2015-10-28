@@ -1,0 +1,79 @@
+/* --------------------------------------------------------------------
+                           Settings Dialog
+                              Chapter 14
+
+                    Real World Programming for OS/2
+             Copyright (c) 1993 Blain, Delimon, and English
+-------------------------------------------------------------------- */
+
+DLGTEMPLATE IDD_SETTINGS LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Communications Settings", IDD_SETTINGS, 41, 104, 327, 125, WS_VISIBLE, 
+            FCF_SYSMENU | FCF_TITLEBAR | FCF_NOBYTEALIGN
+    PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+    BEGIN
+        LTEXT           "Port", -1, 3, 112, 20, 8
+        CONTROL         "", IDC_PORT, 3, 77, 35, 35, WC_COMBOBOX, 
+                        CBS_DROPDOWNLIST | WS_GROUP | WS_TABSTOP | 
+                        WS_VISIBLE
+        LTEXT           "Baud Rate", -1 , 3,  92, 37,  8
+        CONTROL         "", IDC_BAUDRATE, 7, 1, 44, 91, WC_SLIDER, 
+                        SLS_VERTICAL | SLS_LEFT | SLS_SNAPTOINCREMENT | 
+                        SLS_BUTTONSBOTTOM | SLS_HOMETOP |
+                        SLS_PRIMARYSCALE1 | WS_GROUP | WS_TABSTOP | 
+                        WS_VISIBLE
+                        CTLDATA 12, 0, 13, 0, 0, 0
+        GROUPBOX        "Data Bits", -1, 55, 100, 79, 20
+        AUTORADIOBUTTON "5",     IDC_DATABITS_5,   59, 102, 18, 10, WS_TABSTOP
+        AUTORADIOBUTTON "6",     IDC_DATABITS_6,   78, 102, 18, 10, WS_TABSTOP
+        AUTORADIOBUTTON "7",     IDC_DATABITS_7,   95, 102, 18, 10, WS_TABSTOP
+        AUTORADIOBUTTON "8",     IDC_DATABITS_8,  113, 102, 18, 10, WS_TABSTOP
+        GROUPBOX        "Stop Bits", -1, 55, 75, 79, 22
+        AUTORADIOBUTTON "1",     IDC_STOPBITS_1,   60,  78, 18, 10, WS_TABSTOP
+        AUTORADIOBUTTON "1.5",   IDC_STOPBITS_15,  84,  78, 24, 10, WS_TABSTOP
+        AUTORADIOBUTTON "2",     IDC_STOPBITS_2,  114,  78, 18, 10, WS_TABSTOP
+        GROUPBOX        "Parity", -1, 54, 33, 80, 38
+        AUTORADIOBUTTON "None",  IDC_PARITY_NONE,  58,  52, 33, 10, WS_TABSTOP
+        AUTORADIOBUTTON "Odd",   IDC_PARITY_ODD,   58,  43, 33, 10, WS_TABSTOP
+        AUTORADIOBUTTON "Even",  IDC_PARITY_EVEN,  58,  35, 33, 10, WS_TABSTOP
+        AUTORADIOBUTTON "Mark",  IDC_PARITY_MARK,  96,  52, 33, 10, WS_TABSTOP
+        AUTORADIOBUTTON "Space", IDC_PARITY_SPACE, 96,  43, 33, 10, WS_TABSTOP
+        GROUPBOX        "Handshaking", -1, 139, 33, 70, 87
+        AUTOCHECKBOX    "DTR Control", IDC_HANDSHAKING_DTRC, 144, 102, 50, 10
+        AUTOCHECKBOX    "DTR Input",   IDC_HANDSHAKING_DTRI, 144,  92, 50, 10
+        AUTOCHECKBOX    "CTS Output",  IDC_HANDSHAKING_CTSO, 144,  82, 50, 10
+        AUTOCHECKBOX    "DSR Output",  IDC_HANDSHAKING_DSRO, 144,  72, 50, 10
+        AUTOCHECKBOX    "DCD Output",  IDC_HANDSHAKING_DCDO, 144,  62, 50, 10
+        AUTOCHECKBOX    "DSR Input",   IDC_HANDSHAKING_DSRI, 144,  52, 50, 10
+        AUTOCHECKBOX    "RTS Input",   IDC_HANDSHAKING_RTSI, 144,  42, 50, 10
+        GROUPBOX        "Flow Control", -1, 214, 33, 105, 87
+        AUTOCHECKBOX    "XON/XOFF Transmit", IDC_FLOWCONTROL_XONXOFFT,  218, 102, 73, 10
+        ENTRYFIELD      "", IDC_XONCHAR,  295, 102, 6, 8, ES_CENTER | NOT 
+                        ES_AUTOSCROLL | ES_MARGIN
+        ENTRYFIELD      "", IDC_XOFFCHAR, 305, 102, 6, 8, ES_CENTER | NOT 
+                        ES_AUTOSCROLL | ES_MARGIN
+        AUTOCHECKBOX    "XON/XOFF Receive",  IDC_FLOWCONTROL_XONXOFFR,  218,  92, 73, 10
+        AUTOCHECKBOX    "Error Replacement", IDC_FLOWCONTROL_ERRORREP,  218,  82, 73, 10
+        AUTOCHECKBOX    "Null Stripping",    IDC_FLOWCONTROL_NULLSTRIP, 218,  72, 73, 10
+        AUTOCHECKBOX    "Break Replacement", IDC_FLOWCONTROL_BREAKREP,  218,  62, 73, 10
+        AUTOCHECKBOX    "RTS Control",       IDC_FLOWCONTROL_RTSC,      218,  52, 73, 10
+        AUTOCHECKBOX    "Toggling",          IDC_FLOWCONTROL_TOGGLING,  218,  42, 73, 10
+        ENTRYFIELD      "", IDC_ERRORREPCHAR, 295, 82, 6, 8, ES_CENTER | NOT 
+                        ES_AUTOSCROLL | ES_MARGIN
+        ENTRYFIELD      "", IDC_BREAKREPCHAR, 295, 62, 6, 8, ES_CENTER | NOT 
+                        ES_AUTOSCROLL | ES_MARGIN
+        GROUPBOX        "Timeouts", -1, 54, 8, 128, 23
+        LTEXT           "Write", -1, 59, 14, 20, 8
+        CONTROL         "", IDC_TIMEOUT_WRITE, 83, 12, 32, 12, WC_SPINBUTTON, 
+                        SPBS_ALLCHARACTERS | SPBS_NUMERICONLY | SPBS_MASTER | 
+                        SPBS_SERVANT | SPBS_JUSTRIGHT | 
+                        SPBS_FASTSPIN | WS_GROUP | WS_TABSTOP | WS_VISIBLE
+        LTEXT           "Read", -1, 119, 14, 20, 8
+        CONTROL         "", IDC_TIMEOUT_READ, 143, 12, 32, 12, WC_SPINBUTTON, 
+                        SPBS_ALLCHARACTERS | SPBS_NUMERICONLY | SPBS_MASTER | 
+                        SPBS_SERVANT | SPBS_JUSTRIGHT | 
+                        SPBS_FASTSPIN | WS_GROUP | WS_TABSTOP | WS_VISIBLE
+        PUSHBUTTON      "OK",     DID_OK,     229, 11, 40, 14
+        PUSHBUTTON      "Cancel", DID_CANCEL, 279, 11, 40, 14
+    END
+END

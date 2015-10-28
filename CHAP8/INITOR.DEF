@@ -1,0 +1,8 @@
+NAME          INITOR   WINDOWAPI
+DESCRIPTION   'OS/2 INI Editor Program (c) 1993 Blain, Delimon, & English'
+PROTMODE
+HEAPSIZE      4096
+STACKSIZE     32768
+EXPORTS       ClientWndProc
+              DataWndProc
+              AboutDlgProc

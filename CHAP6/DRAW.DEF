@@ -1,0 +1,8 @@
+NAME          DRAW  WINDOWAPI
+DESCRIPTION   'Draw Sample Program (c) 1933 Blain, Delimon, & English'
+PROTMODE
+HEAPSIZE      4096
+STACKSIZE     32768
+IMPORTS       GpiPolygons = PMGPI.650
+EXPORTS       ClientWndProc
+              AboutDlgProc

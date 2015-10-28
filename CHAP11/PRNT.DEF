@@ -1,0 +1,11 @@
+NAME          PRNT   WINDOWAPI
+DESCRIPTION   'Print Sample Program (c) 1993 Blain, Delimon, & English'
+PROTMODE
+HEAPSIZE      4096
+STACKSIZE     32768
+EXPORTS       AboutDlgProc
+              ClientWndProc
+              PrintInfoDlgProc
+              PrintStatusProc
+              PrintDlgProc
+              SelectPrinterDlgProc

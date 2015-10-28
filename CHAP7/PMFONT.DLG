@@ -1,0 +1,122 @@
+/* --------------------------------------------------------------------
+                           Chapter 7 Dialogs
+                              Chapter 7
+
+                    Real World Programming for OS/2
+             Copyright (c) 1993 Blain, Delimon, and English
+-------------------------------------------------------------------- */
+
+DLGINCLUDE 1 "CHAP7.H"
+
+DLGTEMPLATE METRICS_DLG LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Fontmetrics", METRICS_DLG, 105, 77, 210, 155, NOT FS_DLGBORDER
+            PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+    BEGIN
+        GROUPBOX        "Names", -1, 4, 127, 204, 27
+        LTEXT           "szFamilyname:", -1, 9, 138, 53, 8
+        LTEXT           "szFacename:", -1, 9, 129, 50, 8
+        LTEXT           "", DID_FAMILYNAME, 78, 138, 127, 8
+        LTEXT           "", DID_FACENAME, 78, 129, 128, 8
+        GROUPBOX        "Sizes", -1, 4, 61, 203, 64
+        LTEXT           "lMaxAscender", -1, 9, 109, 60, 8
+        LTEXT           "10", DID_MAXASCENDER, 69, 109, 20, 8
+        LTEXT           "lMaxDecender", -1, 9, 100, 60, 8
+        LTEXT           "10", DID_MAXDECENDER, 69, 100, 20, 8
+        LTEXT           "lMaxBaselineExt", -1, 9, 91, 60, 8
+        LTEXT           "10", DID_MAXBASELINEEXT, 69, 91, 20, 8
+        LTEXT           "lInternalLeading", -1, 9, 82, 60, 8
+        LTEXT           "10", DID_INTERNALLEADING, 69, 82, 20, 8
+        LTEXT           "lExternalLeading", -1, 9, 73, 60, 8
+        LTEXT           "10", DID_EXTERNALLEADING, 69, 73, 20, 8
+        LTEXT           "lAveCharWidth", -1, 9, 64, 60, 8
+        LTEXT           "10", DID_AVECHARWIDTH, 69, 64, 20, 8
+        LTEXT           "lXHeight:", -1, 97, 109, 64, 8
+        LTEXT           "10", DID_XHEIGHT, 169, 110, 20, 8
+        LTEXT           "lEMHeight:", -1, 97, 100, 64, 8
+        LTEXT           "10", DID_EMHEIGHT, 169, 101, 20, 8
+        LTEXT           "lLowerCaseAscent", -1, 97, 91, 64, 8
+        LTEXT           "10", DID_LOWERCASEASCENT, 169, 92, 20, 8
+        LTEXT           "lLowerCaseDecent", -1, 97, 82, 64, 8
+        LTEXT           "10", DID_LOWERCASEDECENT, 169, 83, 20, 8
+        LTEXT           "lEmInc", -1, 97, 73, 64, 8
+        LTEXT           "10", DID_EMINC, 169, 74, 20, 8
+        LTEXT           "lMaxCharInc", -1, 97, 64, 64, 8
+        LTEXT           "10", DID_MAXCHARINC, 169, 65, 20, 8
+        GROUPBOX        "Attributes", 4, 3, 2, 204, 59
+        LTEXT           "Point Size", -1, 9, 45, 49, 8
+        LTEXT           "10", DID_POINT_SIZE, 69, 45, 20, 8
+        LTEXT           "usCodePage", -1, 9, 35, 49, 9
+        LTEXT           "850", DID_CODEPAGE, 69, 36, 20, 8
+        LTEXT           "usSelection", -1, 9, 27, 49, 8
+        LTEXT           "10", DID_SELECTION, 69, 27, 20, 8
+        LTEXT           "sFamilyClass", -1, 9, 17, 49, 8
+        LTEXT           "10", DID_FAMILYCLASS, 69, 18, 20, 8
+        LTEXT           "sKerningPairs", -1, 9, 8, 53, 8
+        LTEXT           "10", DID_KERNPAIRS, 69, 9, 20, 8
+        LTEXT           "usType", -1, 97, 44, 53, 8
+        LTEXT           "10", DID_TYPE, 150, 45, 54, 8
+        LTEXT           "usDefn", -1, 97, 36, 53, 8
+        LTEXT           "10", DID_DEFINITION, 150, 36, 54, 8
+        LTEXT           "usCapabilities", -1, 97, 28, 53, 8
+        LTEXT           "10", DID_CAPABILITIES, 150, 27, 54, 8
+        LTEXT           "usWeightClass", -1, 97, 18, 53, 8
+        LTEXT           "10", DID_WEIGHTCLASS, 150, 18, 54, 8
+        LTEXT           "usWidthClass", -1, 97, 9, 53, 8
+        LTEXT           "10", DID_WIDTHCLASS, 150, 9, 54, 8
+    END
+END
+
+DLGTEMPLATE SHEAR_DLG LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "", SHEAR_DLG, 115, 55, 210, 157, NOT FS_DLGBORDER
+            PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+    BEGIN
+        GROUPBOX        "Character Size", -1, 3, 133, 204, 22
+        LTEXT           "Height", -1, 7, 138, 28, 8
+        ENTRYFIELD      "", DID_CHAR_HEIGHT, 37, 139, 16, 7, ES_MARGIN
+        LTEXT           "Width", -1, 59, 138, 20, 8
+        ENTRYFIELD      "", DID_CHAR_WIDTH, 90, 139, 16, 7, ES_MARGIN
+        PUSHBUTTON      "Reset", DID_RESET_SIZE, 170, 136, 32, 12
+        GROUPBOX        "Character Angle", -1, 3, 108, 204, 22
+        LTEXT           "X Point", 6, 7, 112, 30, 8
+        ENTRYFIELD      "1", DID_ANGLEX, 37, 113, 16, 7, ES_MARGIN
+        LTEXT           "Y Point", 7, 59, 112, 27, 8
+        ENTRYFIELD      "0", DID_ANGLEY, 90, 113, 16, 7, ES_MARGIN
+        PUSHBUTTON      "Reset", DID_RESET_ANGLE, 170, 111, 32, 12
+        GROUPBOX        "Character Shear", -1, 3, 83, 204, 22
+        LTEXT           "X Point", 4, 7, 87, 26, 8
+        ENTRYFIELD      "0", DID_SHEARX, 37, 89, 16, 7, ES_MARGIN
+        LTEXT           "Y Point", -1, 59, 87, 26, 8
+        ENTRYFIELD      "1", DID_SHEARY, 90, 88, 16, 7, ES_MARGIN
+        PUSHBUTTON      "Reset", DID_RESET_SHEAR, 170, 86, 32, 12
+        GROUPBOX        "Character Spacing", -1, 3, 40, 204, 41
+        LTEXT           "Char Extra", -1, 7, 60, 38, 8
+        CONTROL         "", DID_CHAR_EXTRA, 66, 60, 140, 16, WC_SLIDER, 
+                        SLS_HORIZONTAL | SLS_CENTER | SLS_LEFT | 
+                        SLS_SNAPTOINCREMENT | SLS_HOMELEFT | 
+                        SLS_PRIMARYSCALE1 | WS_GROUP | WS_TABSTOP | 
+                        WS_VISIBLE
+                        CTLDATA 12, 0, 21, 0, 0, 0
+        LTEXT           "Break Char Extra", 9, 7, 44, 57, 8
+        CONTROL         "", DID_BREAK_EXTRA, 67, 44, 138, 16, WC_SLIDER, 
+                        SLS_HORIZONTAL | SLS_CENTER | SLS_LEFT | 
+                        SLS_SNAPTOINCREMENT | SLS_HOMELEFT | 
+                        SLS_PRIMARYSCALE1 | WS_GROUP | WS_TABSTOP | 
+                        WS_VISIBLE
+                        CTLDATA 12, 0, 21, 0, 0, 0
+        GROUPBOX        "Display Text", DID_POINTSIZE, 3, 14, 204, 22
+        ENTRYFIELD      "", DID_USER_TEXT, 12, 19, 134, 7, ES_MARGIN
+        DEFPUSHBUTTON   "Apply", DID_APPLY, 164, 17, 35, 12
+        LTEXT           "Angle", -1, 112, 112, 20, 8
+        CONTROL         "", DID_ROT_ANGLE, 133, 112, 30, 12, WC_SPINBUTTON, 
+                        SPBS_ALLCHARACTERS | SPBS_NUMERICONLY | SPBS_MASTER | 
+                        SPBS_SERVANT | SPBS_JUSTDEFAULT | SPBS_FASTSPIN | 
+                        WS_GROUP | WS_TABSTOP | WS_VISIBLE
+        LTEXT           "Angle", -1, 113, 88, 20, 8
+        CONTROL         "", DID_SHEAR_ANGLE, 134, 87, 30, 12, WC_SPINBUTTON, 
+                        SPBS_ALLCHARACTERS | SPBS_NUMERICONLY | SPBS_MASTER | 
+                        SPBS_SERVANT | SPBS_JUSTDEFAULT | SPBS_FASTSPIN | 
+                        WS_GROUP | WS_TABSTOP | WS_VISIBLE
+    END
+END

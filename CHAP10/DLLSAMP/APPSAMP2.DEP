@@ -1,0 +1,22 @@
+#====================================================================
+# DLL Sample Application 2 Dependencies Make File
+# Chapter 10
+#
+# Real World Programming for OS/2
+# Copyright (c) 1993 Blain, Delimon, and English
+#====================================================================
+
+#====================================================================
+# Dependencies and Build Items
+#====================================================================
+
+ABOUT = ..\..\common\about.obj
+OBJS  = appsamp2.obj
+
+all: appsamp2.exe appsamp2.res
+
+appsamp2.obj: appsamp2.c appsamp.h dllsamp.h
+
+appsamp2.res: appsamp2.rc appsamp.h 
+
+appsamp2.exe: $(OBJS) appsamp2.res appsamp2.def

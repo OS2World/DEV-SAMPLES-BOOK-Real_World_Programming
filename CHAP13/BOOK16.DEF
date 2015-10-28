@@ -1,0 +1,8 @@
+LIBRARY       BOOK16
+DESCRIPTION   'Book16 16-bit Code (c) 1993 Blain, Delimon, & English'
+
+DATA SINGLE
+
+EXPORTS
+    GetBookInformation @1
+    GetAuthorByIndex   @2

@@ -1,0 +1,21 @@
+/* --------------------------------------------------------------------
+                            Buttons Dialog
+                              Chapter 14
+
+                    Real World Programming for OS/2
+             Copyright (c) 1993 Blain, Delimon, and English
+-------------------------------------------------------------------- */
+
+DLGTEMPLATE IDD_BUTTONS LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "", IDD_BUTTONS, 48, 86, 41, 86, NOT FS_DLGBORDER | WS_VISIBLE,
+        FCF_NOBYTEALIGN
+    PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+    BEGIN
+        PUSHBUTTON      "Connect",   IDC_CONNECT,  1,  72, 40, 14
+        PUSHBUTTON      "HangUp",    IDC_HANGUP,   1,  54, 40, 14, WS_DISABLED
+        PUSHBUTTON      "Settings",  IDC_SETTINGS, 1,  36, 40, 14
+        PUSHBUTTON      "Stop",      IDC_TRANSMIT, 1,  18, 40, 14
+        PUSHBUTTON      "About",     IDC_ABOUT,    1,   0, 40, 14
+    END
+END

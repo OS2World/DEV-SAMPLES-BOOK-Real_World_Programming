@@ -1,0 +1,7 @@
+NAME          SKELETON   WINDOWAPI
+DESCRIPTION   'Skeleton Program (c) Blain, Delimon, & English, 1992'
+PROTMODE
+HEAPSIZE      4096
+STACKSIZE     32768
+EXPORTS       ClientWndProc
+              AboutDlgProc

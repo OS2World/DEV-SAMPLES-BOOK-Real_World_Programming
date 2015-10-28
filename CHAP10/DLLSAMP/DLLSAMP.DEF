@@ -1,0 +1,9 @@
+LIBRARY       DLLSAMP  
+DESCRIPTION   'DLL Sample (c) 1993 Blain, Delimon, & English'
+
+DATA SINGLE
+
+EXPORTS
+    CenterWindow   @1
+    FillWindow     @2
+
