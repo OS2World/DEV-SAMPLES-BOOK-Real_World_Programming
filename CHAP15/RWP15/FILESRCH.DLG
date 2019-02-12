@@ -1,0 +1,26 @@
+/* --------------------------------------------------------------------
+                           File Search Dialog
+                              Chapter 15
+
+                    Real World Programming for OS/2
+             Copyright (c) 1993 Blain, Delimon, and English
+-------------------------------------------------------------------- */
+
+DLGTEMPLATE IDD_FILESEARCH LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "File Search", IDD_FILESEARCH, 57, 35, 239, 93, WS_VISIBLE, FCF_SYSMENU | 
+            FCF_TITLEBAR | FCF_NOBYTEALIGN
+    BEGIN
+        LTEXT           "Filename",     -1,     4, 81,  44,  8
+        ENTRYFIELD      "", IDC_FILENAME,      49, 80,  97,  8, ES_MARGIN
+        LTEXT           "Search Drive", -1,   152, 80,  58,  9
+        CONTROL         "", IDC_DRIVELIST,    211, 46,  21, 43, WC_COMBOBOX, 
+                        CBS_DROPDOWNLIST | WS_GROUP | WS_TABSTOP | 
+                        WS_VISIBLE
+        LTEXT           "Directories",  -1,     4, 70,  48,  8
+        LISTBOX         IDC_DIRLIST,            4, 20, 227, 50, LS_HORZSCROLL | NOT WS_TABSTOP
+        LTEXT           "Searching", IDC_SEARCHING, 3, 10,  44,  8
+        LTEXT           "", IDC_CURRENTDIR,     4,  2, 189,  8
+        PUSHBUTTON      "Search", IDC_SEARCH, 194,  1,  40, 14
+    END
+END

@@ -1,0 +1,45 @@
+/* --------------------------------------------------------------------
+                       Miscellaneous Resource File
+                              Chapter 15
+
+                    Real World Programming for OS/2
+             Copyright (c) 1993 Blain, Delimon, and English
+-------------------------------------------------------------------- */
+
+#include <os2.h>
+#include "misc.h"
+#include "pibtib.h"
+#include "drives.h"
+#include "filesrch.h"
+#include "sysinfo.h"
+
+ICON ID_APPNAME MISC.ICO
+
+STRINGTABLE LOADONCALL MOVEABLE
+BEGIN
+    ID_APPNAME      "Miscellaneous Topics Application"
+END
+
+MENU ID_APPNAME
+{
+    SUBMENU  "~System",             IDM_SYSTEM
+    {
+        MENUITEM "~ThreadInfo",     IDM_PIBTIB
+        MENUITEM "~SysInfo",        IDM_SYSINFO
+        MENUITEM "",               -1,            MIS_SEPARATOR
+        MENUITEM "~About...",       IDM_ABOUT
+    }
+    SUBMENU  "~Files",              IDM_FILES
+    {
+        MENUITEM "~Drives",         IDM_DRIVES
+        MENUITEM "~File Search",    IDM_FILESEARCH
+    }
+}
+
+rcinclude pibtib.dlg
+rcinclude drives.dlg
+rcinclude filesrch.dlg
+rcinclude sysinfo.dlg
+rcinclude ..\common\about.dlg
+                                       
+

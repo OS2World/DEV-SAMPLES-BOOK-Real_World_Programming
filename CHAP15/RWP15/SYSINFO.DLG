@@ -1,0 +1,17 @@
+/* --------------------------------------------------------------------
+                        System Information Dialog
+                              Chapter 15
+
+                    Real World Programming for OS/2
+             Copyright (c) 1993 Blain, Delimon, and English
+-------------------------------------------------------------------- */
+
+DLGTEMPLATE IDD_SYSINFO LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "System Information - DosQuerySysInfo", IDD_SYSINFO, 23, 42, 213, 86, 
+            WS_VISIBLE, FCF_SYSMENU | FCF_TITLEBAR | FCF_NOBYTEALIGN
+    BEGIN
+        LISTBOX IDC_SYSINFOLIST, 4, 3, 195, 80
+            PRESPARAMS PP_FONTNAMESIZE, "10.System Monospaced"
+    END
+END

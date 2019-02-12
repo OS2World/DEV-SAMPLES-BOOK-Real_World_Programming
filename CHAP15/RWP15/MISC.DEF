@@ -1,0 +1,13 @@
+NAME          MISC   WINDOWAPI
+DESCRIPTION   'Miscellaneous Topics Program (c) 1993 Blain, Delimon, & English'
+PROTMODE
+
+HEAPSIZE      4096
+STACKSIZE     16384
+
+EXPORTS       
+    ClientWndProc      @1
+    PIBTIBDlgProc      @2
+    DrivesDlgProc      @3
+    FileSearchDlgProc  @4
+    AboutDlgProc       @5

@@ -1,0 +1,31 @@
+#====================================================================
+# Miscellaneous Dependencies Make File
+# Chapter 15
+#
+# Real World Programming for OS/2
+# Copyright (c) 1993 Blain, Delimon, and English
+#====================================================================
+
+#====================================================================
+# Dependencies and Build Items
+#====================================================================
+
+OBJS  = misc pibtib drives filesrch sysinfo
+OBJS2 = misc.obj pibtib.obj drives.obj filesrch.obj sysinfo.obj
+
+all: misc.exe misc.res
+
+misc.obj: misc.c misc.h pibtib.h drives.h filesrch.h sysinfo.h
+
+pibtib.obj: pibtib.c pibtib.h
+
+drives.obj: drives.c drives.h
+
+filesrch.obj: filesrch.c filesrch.h
+
+sysinfo.obj: sysinfo.c sysinfo.h
+
+misc.res: misc.rc pibtib.dlg drives.dlg filesrch.dlg sysinfo.dlg
+
+misc.exe: $(OBJS2) misc.res misc.def
+
